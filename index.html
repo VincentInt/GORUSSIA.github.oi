@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>GO RUSSIA</title>
+  </head>
+  <body>
+    <header class="header_container">
+      <div class="background_container">
+        <img id="banner_img" class="background_img" src="" alt="banner_img" />
+      </div>
+      <section class="section_header_nav">
+        <nav class="container_nav">
+          <div>
+            <div class="logotype_container">
+              <h1 class="logotype_rotate">
+                GO <span class="logotype_span">RUSSIA</span>
+              </h1>
+            </div>
+            <div class="container_bth">
+              <button class="btn_nav">
+                <img
+                  class="icon btn_nav_img"
+                  src="/img/icon/map_5074088.png"
+                  alt="shop_icon"
+                />
+                <h5 class="btn_text">карта</h5>
+              </button>
+              <button class="btn_nav">
+                <img
+                  class="icon btn_nav_img"
+                  src="/img/icon/icons8-car-96.png"
+                  alt="shop_icon"
+                />
+                <h5 class="btn_text">транспорт</h5>
+              </button>
+              <button class="btn_nav">
+                <img
+                  class="icon btn_nav_img"
+                  src="/img/icon/wondicon-ui-free-sleep_111270.png"
+                  alt="shop_icon"
+                />
+                <h5 class="btn_text">отели</h5>
+              </button>
+              <button class="btn_nav">
+                <img
+                  class="icon btn_nav_img"
+                  src="/img/icon/shopping-cart_3916630.png"
+                  alt="shop_icon"
+                />
+                <h5 class="btn_text">магазин</h5>
+              </button>
+            </div>
+            <div class="container_time">
+              <h2 class="big_time_text">14</h2>
+              <div class="container_flex_time">
+                <h3 class="small_time_text">04</h3>
+                <h3 class="small_time_text">24</h3>
+              </div>
+            </div>
+            <div class="container_location">
+              <img
+                class="icon location_img"
+                src="/img/icon/icons8-location-100.png"
+                alt="location_icon btn_nav_img"
+              />
+              <h5 class="location_text">Краснодар</h5>
+            </div>
+          </div>
+        </nav>
+      </section>
+      <section id="section_banner" class="section_banner">
+        <div class="btn_arrow_container">
+          <button id="left_banner_btn" class="btn_arrow">
+            <img
+              class="icon"
+              src="/img/icon/Shape.png"
+              alt="left_banner_icon"
+            />
+          </button>
+          <button id="rigth_banner_btn" class="btn_arrow">
+            <img
+              class="icon"
+              src="/img/icon/Shape.png"
+              alt="left_banner_icon"
+            />
+          </button>
+        </div>
+        <div class="container_banner_text">
+          <div class="container_text">
+            <h3 class="category_text">ГОРОД</h3>
+            <h2 id="city_banner_text" class="upper_text"></h2>
+          </div>
+          <div class="container_text">
+            <h3 class="category_text">УНИКАЛЬНОСТЬ</h3>
+            <h2 id="uniqueness_banner_text" class="upper_text"></h2>
+          </div>
+        </div>
+        <div
+          id="container_slides_state"
+          class="container_state_slide_banner"
+        ></div>
+      </section>
+    </header>
+    <main>
+      <section class="section_map">
+        <div>
+          <h2 class="upper_text">Путешествуй по россии</h2>
+          <div id="map_points" class="container_map">
+            <img src="/img/map--hd.png" alt="map_img" />
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
