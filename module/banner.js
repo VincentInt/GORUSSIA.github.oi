@@ -1,12 +1,12 @@
 const slidesBaseArray = [
   {
-    img: "/img/sochi-2.jpg",
+    img: "./img/sochi-2.jpg",
     city: "Сочи",
     uniqueness: "Тропический климат",
     terrain: "Красная поляна",
   },
   {
-    img: "/img/1663378251_1-mykaleidoscope-ru-p-krasnodar-stadion-galitskogo-krasivo-1.jpg",
+    img: "./img/1663378251_1-mykaleidoscope-ru-p-krasnodar-stadion-galitskogo-krasivo-1.jpg",
     city: "Краснодар",
     uniqueness: "Столица европейского юга",
     terrain: "Парк Галицкого",
