@@ -11,6 +11,12 @@ const slidesBaseArray = [
     uniqueness: "Столица европейского юга",
     terrain: "Парк Галицкого",
   },
+  {
+    img: "./img/259607761-1536x1079.jpg",
+    city: "Москва",
+    uniqueness: "Крупнейший город РФ",
+    terrain: "Москва река",
+  }
 ];
 export const bannerMainFunc = () => {
   let indexSlide = 0;

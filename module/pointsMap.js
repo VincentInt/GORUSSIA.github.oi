@@ -1,6 +1,7 @@
 const pointBaseArray = [
   { city: "Москва", top: 38, left: 13.5 },
   { city: "Краснодар", top: 55, left: 4 },
+  { city: "Сочи", top: 57, left: 2},
 ];
 export const pointsMapFunc = () => {
   let currentPoint = null;
@@ -10,14 +11,14 @@ export const pointsMapFunc = () => {
     if (currentPoint != pointItem) {
       mapPointsElem.insertAdjacentHTML(
         "afterbegin",
-        `<div style="top:${pointItem.top - 17}%; left:${
-          pointItem.left - 4
+        `<div style="top:${pointItem.top - 16}%; left:${
+          pointItem.left - 3.5
         }%;" id="info_point" class="container_info_point">
             <h2 class="info_text">${pointItem.city}</h2>
             <h3 class="info_text">UTC:0 20:40</h3>
             <div class="container_info">
                 <div>
-                    <img class="icon point_icon" src="./img/icon/thermometer-half_5070429.png" alt="rain_logo"/>
+                    <img class="icon point_icon" src="./img/icon/thermometer-half_5070429.png" alt="temp_logo"/>
                     <h5>9-13</h5>
                 </div>
                 <div>
@@ -25,7 +26,7 @@ export const pointsMapFunc = () => {
                     <h5>9-13</h5>
                 </div>
                 <div>
-                    <img class="icon point_icon" src="./img/icon/wind_5070417.png" alt="rain_logo"/>
+                    <img class="icon point_icon" src="./img/icon/wind_5070417.png" alt="wind_logo"/>
                     <h5>9-13</h5>
                 </div>
             </div>
@@ -45,6 +46,10 @@ export const pointsMapFunc = () => {
       );
       const pointElem = document.getElementById(`point_${index}`);
       pointElem.onmouseover = () => infoHoverPoint(elem);
+      pointElem.onmouseleave = () => {
+        document.getElementById("info_point")?.remove();
+        currentPoint = null;
+      };
     });
   }
   renderPoints();
