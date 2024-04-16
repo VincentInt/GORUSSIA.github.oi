@@ -17,15 +17,15 @@ export const pointsMapFunc = () => {
             <h3 class="info_text">UTC:0 20:40</h3>
             <div class="container_info">
                 <div>
-                    <img class="icon point_icon" src="/img/icon/thermometer-half_5070429.png" alt="rain_logo"/>
+                    <img class="icon point_icon" src="./img/icon/thermometer-half_5070429.png" alt="rain_logo"/>
                     <h5>9-13</h5>
                 </div>
                 <div>
-                    <img class="icon point_icon" src="/img/icon/cloud-showers-heavy_6853872.png" alt="rain_logo"/>
+                    <img class="icon point_icon" src="./img/icon/cloud-showers-heavy_6853872.png" alt="rain_logo"/>
                     <h5>9-13</h5>
                 </div>
                 <div>
-                    <img class="icon point_icon" src="/img/icon/wind_5070417.png" alt="rain_logo"/>
+                    <img class="icon point_icon" src="./img/icon/wind_5070417.png" alt="rain_logo"/>
                     <h5>9-13</h5>
                 </div>
             </div>
