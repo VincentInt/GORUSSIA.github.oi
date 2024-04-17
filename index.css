@@ -216,15 +216,19 @@ button {
       padding: 20px 30px;
       border-radius: 8px;
       background-color: rgba(0, 0, 0, 0.878);
-      .info_text{
+      .info_text {
         text-align: start;
       }
       .container_info {
         display: flex;
         gap: 25px;
         margin-top: 15px;
-        .point_icon {
-          filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(180deg);
+        .container_point_icon {
+          display: flex;
+          justify-content: center;
+          .point_icon {
+            filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(180deg);
+          }
         }
       }
     }
@@ -233,6 +237,7 @@ button {
       display: flex;
       justify-content: center;
       align-items: center;
+      padding: 10px;
       .point_map {
         margin-right: 8px;
         width: 20px;
