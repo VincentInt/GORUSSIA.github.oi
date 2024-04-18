@@ -249,6 +249,70 @@ button {
     }
   }
 }
+.section_beach_cards {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-top: 110px;
+  .beach_card {
+    overflow: hidden;
+    position: relative;
+    width: 100vh;
+    height: 900px;
+    margin-left: -40px;
+    &:hover{
+      .container_img_beach_card {
+        .img_beach_card{
+          transition: filter 1s ease;
+          filter: brightness(100%);
+        }
+      }
+    }
+    &:first-child{
+      margin-left: 0px;
+    }
+    &:nth-child(2){
+      margin-top: -40px;
+    }
+    &:nth-child(4){
+      margin-top: -40px;
+    }
+    .container_img_beach_card {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      width: 420px;
+      height: 900px;
+      .img_beach_card {
+        transition: filter 1s ease;
+        filter: brightness(45%);
+        z-index: -1;
+      }
+    }
+    .container_text_beach_card {
+      margin-top: 72px;
+      margin-left: 40px;
+      .text_beach {
+        width: 200px;
+        text-align: left;
+      }
+      .container_text_location {
+        display: flex;
+        height: 70%;
+        text-wrap: nowrap;
+        writing-mode: vertical-rl;
+        rotate: -180deg;
+        .text_location {
+          padding: 10px 0px;
+          font-size: 18px;
+          letter-spacing: 3px;
+          &:first-child {
+            border-bottom: 1px solid white;
+          }
+        }
+      }
+    }
+  }
+}
 @keyframes move_inside_line {
   0% {
     width: 0%;

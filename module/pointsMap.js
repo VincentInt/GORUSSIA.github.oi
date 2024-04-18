@@ -19,8 +19,8 @@ export const pointsMapFunc = () => {
 
       mapPointsElem.insertAdjacentHTML(
         "afterbegin",
-        `<div style="top:${pointItem.top - 16}%; left:${
-          pointItem.left - 3.5
+        `<div style="top:${pointItem.top - 13}%; left:${
+          pointItem.left
         }%;" id="info_point" class="container_info_point">
             <h2 class="info_text">${pointItem.city}</h2>
             <div class="container_info">
