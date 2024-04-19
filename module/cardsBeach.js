@@ -20,7 +20,7 @@ const beachsBaseArray = [
     locate: { region: "Калининградская область", beachLocate: "Балтийск" },
   },
 ];
-export const cardsBeach = () => {
+export const cardsBeachFunc = () => {
   const beachCardsElem = document.getElementById("container_beach_cards");
   beachsBaseArray.forEach((elem) => {
     beachCardsElem.insertAdjacentHTML(

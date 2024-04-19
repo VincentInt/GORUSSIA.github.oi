@@ -1,7 +1,9 @@
-import { bannerMainFunc } from "./module/banner.js";
-import { cardsBeach } from "./module/cardsBeach.js";
+import { bannerMainFunc } from "./module/headerBanner.js";
+import { cardsBeachFunc } from "./module/cardsBeach.js";
 import { pointsMapFunc } from "./module/pointsMap.js";
+import { serviceBannerFunc } from "./module/serviceBanner.js";
 
 bannerMainFunc();
 pointsMapFunc();
-cardsBeach();
+cardsBeachFunc();
+serviceBannerFunc()
