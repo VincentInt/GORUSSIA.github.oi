@@ -34,7 +34,7 @@ button {
   filter: contrast(0%) brightness(500%);
 }
 .upper_text {
-  font-size: 48px;
+  font-size: 38px;
   text-transform: uppercase;
 }
 .header_container {
@@ -330,8 +330,8 @@ button {
       overflow: hidden;
       display: flex;
       justify-content: center;
-      min-width: 1100px;
-      height: 650px;
+      min-width: 1000px;
+      height: 580px;
       box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.3);
       .img_slide {
         width: 1300px;
@@ -346,6 +346,7 @@ button {
     }
     .container_nav_banner {
       margin-top: 80px;
+      padding-left: 100px;
       .container_text_slide {
         .upper_text {
           text-align: end;
@@ -370,43 +371,60 @@ button {
   }
   .container_servise {
     margin-top: 20px;
-    .container_airplane {
+    .container_airplane,
+    .container_sleep {
       position: relative;
       display: flex;
       justify-content: space-between;
       margin-left: 140px;
-      .contaienr_airplane_text {
+      .contaienr_airplane_text,
+      .contaienr_sleep_text {
         .upper_text {
           line-height: 65px;
           text-align: left;
         }
       }
-      .img_airplane {
+
+      .img_airplane,
+      .img_sleep {
         position: absolute;
         top: -120px;
         right: 20px;
+      }
+      .img_airplane {
         width: 900px;
         rotate: 12deg;
+      }
+      .img_sleep {
+        width: 500px;
       }
     }
   }
   .container_servise_plane {
     display: flex;
-    justify-content: space-between;
     margin-top: 120px;
     padding: 0px 140px;
     .item_plane {
       display: flex;
       justify-content: left;
-      width: 430px;
+      width: 320px;
+      margin-right: 20px;
+      .container_btn_service {
+        display: flex;
+        justify-content: right;
+        gap: 10px;
+        margin-top: 5px;
+        .icon {
+          width: 20px;
+        }
+      }
       .upper_text {
-        font-size: 48px;
         text-align: left;
       }
       .prev_text {
         rotate: 180deg;
         padding-left: 20px;
-        font-size: 28px;
+        font-size: 25px;
         text-align: end;
         text-wrap: nowrap;
         writing-mode: vertical-lr;
