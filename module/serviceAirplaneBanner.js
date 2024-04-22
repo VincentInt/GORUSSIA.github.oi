@@ -3,24 +3,35 @@ const airplaneServiceBase = {
     {
       airportName: "Международный аэропорт Симферополь имени И.К. Айвазовского",
       img: "./img/Аэропорт_Симферополь.jpg",
+      serviceAirplane: [
+        {
+          category: "Место прибытия",
+          description: "Аэропорт Севастополя",
+        },
+        { category: "Дистанция", description: 1050, after: "Км" },
+        {
+          category: "Время в пути",
+          description: "4 часа 50 минут",
+        },
+        { category: "Стоимость", description: 50000, after: "Руб" },
+      ],
     },
     {
       airportName: "Международный аэропорт Краснодар имени Екатерины II",
       img: "./img/original.jpg",
+      serviceAirplane: [
+        {
+          category: "Место прибытия",
+          description: "Аэропорт Краснодар",
+        },
+        { category: "Дистанция", description: 1050, after: "Км" },
+        {
+          category: "Время в пути",
+          description: "4 часа 50 минут",
+        },
+        { category: "Стоимость", description: 60000, after: "Руб" },
+      ],
     },
-  ],
-  serviceAirplane: [
-    {
-      category: "Место прибытия",
-
-      description: "Аэропорт Севастополя",
-    },
-    { category: "Дистанция", description: 1050, after: "Км" },
-    {
-      category: "Время в пути",
-      description: "4 часа 50 минут",
-    },
-    { category: "Стоимость", description: 50000, after: "Руб" },
   ],
 };
 export const serviceAirplaneBannerFunc = () => {
@@ -52,19 +63,21 @@ export const serviceAirplaneBannerFunc = () => {
     if (indexSlide < 0) indexSlide = airplaneServiceBase.banner.length - 1;
     if (indexSlide >= airplaneServiceBase.banner.length) indexSlide = 0;
     renderSlide();
+    setTimeout(() => renderService(), 500);
   }
   function renderSlide() {
-    containerSliderElem.style = "transition: opacity 0.4s ease-in; opacity: 0;";
+    containerSliderElem.style = "transition: opacity 0.5s ease-in; opacity: 0;";
     setTimeout(() => {
       slideImgElem.src = `${airplaneServiceBase.banner[indexSlide].img}`;
       nameSlideElem.innerText = `${airplaneServiceBase.banner[indexSlide].airportName}`;
 
       containerSliderElem.style =
-        "transition: opacity 0.4s ease-in; opacity: 100;";
+        "transition: opacity 0.5s ease-in; opacity: 100;";
     }, 500);
   }
   function renderService() {
-    airplaneServiceBase.serviceAirplane.forEach((elem) => {
+    containerServiceElem.innerHTML = "";
+    airplaneServiceBase.banner[indexSlide].serviceAirplane.forEach((elem) => {
       let description = elem.description;
       if (typeof elem.description === "number")
         description = intlObj.NumberFormat("en-EN").format(elem.description);

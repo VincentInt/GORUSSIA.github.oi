@@ -3,25 +3,49 @@ const sleepServiceBase = {
     {
       resortName: "Международный аэропорт Симферополь имени И.К. Айвазовского",
       img: "./img/Аэропорт_Симферополь.jpg",
+      serviceSleep: [
+        {
+          category: "Курорт",
+          description: "Аэропорт Севастополя",
+        },
+        {
+          category: "Ночей",
+          servicePrice: 18000,
+          description: 1,
+          after: "Ночь",
+        },
+        {
+          category: "Гостей",
+          servicePrice: 2000,
+          description: 1,
+          after: "гостей",
+        },
+        { category: "Стоимость", description: 50000, after: "Руб" },
+      ],
     },
     {
       resortName: "Международный аэропорт Краснодар имени Екатерины II",
       img: "./img/original.jpg",
+      serviceSleep: [
+        {
+          category: "Курорт",
+          description: "Аэропорт Краснодара",
+        },
+        {
+          category: "Ночей",
+          servicePrice: 18000,
+          description: 1,
+          after: "Ночь",
+        },
+        {
+          category: "Гостей",
+          servicePrice: 2000,
+          description: 1,
+          after: "гостей",
+        },
+        { category: "Стоимость", description: 50000, after: "Руб" },
+      ],
     },
-  ],
-  serviceSleep: [
-    {
-      category: "Курорт",
-      description: "Аэропорт Севастополя",
-    },
-    { category: "Ночей", servicePrice: 18000, description: 1, after: "Ночь" },
-    {
-      category: "Гостей",
-      servicePrice: 2000,
-      description: 1,
-      after: "гостей",
-    },
-    { category: "Стоимость", description: 50000, after: "Руб" },
   ],
 };
 export const serviceSleepBannerFunc = () => {
@@ -49,28 +73,29 @@ export const serviceSleepBannerFunc = () => {
     if (indexSlide < 0) indexSlide = sleepServiceBase.banner.length - 1;
     if (indexSlide >= sleepServiceBase.banner.length) indexSlide = 0;
     renderSlide();
+    setTimeout(()=> renderService(),500)
+   
   }
   function renderSlide() {
-    containerSliderElem.style = "transition: opacity 0.4s ease-in; opacity: 0;";
+    containerSliderElem.style = "transition: opacity 0.5s ease-in; opacity: 0;";
     setTimeout(() => {
       slideImgElem.src = `${sleepServiceBase.banner[indexSlide].img}`;
       nameSlideElem.innerText = `${sleepServiceBase.banner[indexSlide].resortName}`;
 
       containerSliderElem.style =
-        "transition: opacity 0.4s ease-in; opacity: 100;";
+        "transition: opacity 0.5s ease-in; opacity: 100;";
     }, 500);
   }
   function renderService() {
     containerServiceElem.innerHTML = "";
 
     let price = 0;
-
-    sleepServiceBase.serviceSleep.forEach((elem, index) => {
+    sleepServiceBase.banner[indexSlide].serviceSleep.forEach((elem, index) => {
       let description = elem.description;
-      let navService = null;
+      let navService = "";
 
       if (typeof elem.description === "number") {
-        if (sleepServiceBase.serviceSleep.length - 1 === index) {
+        if (sleepServiceBase.banner[indexSlide].serviceSleep.length - 1 === index) {
           price += elem.description;
           description = intlObj.NumberFormat("en-EN").format(price);
         } else
@@ -103,13 +128,13 @@ export const serviceSleepBannerFunc = () => {
       );
       if (navService) {
         document.getElementById(`btn_minus_service_${index}`).onclick = () => {
-          const elem = sleepServiceBase.serviceSleep[index].description;
+          const elem = sleepServiceBase.banner[indexSlide].serviceSleep[index].description;
           if (elem - 1 > 0)
-            sleepServiceBase.serviceSleep[index].description = elem - 1;
+            sleepServiceBase.banner[indexSlide].serviceSleep[index].description = elem - 1;
           renderService();
         };
         document.getElementById(`btn_plus_service_${index}`).onclick = () => {
-          sleepServiceBase.serviceSleep[index].description += 1;
+          sleepServiceBase.banner[indexSlide].serviceSleep[index].description += 1;
           renderService();
         };
       }
