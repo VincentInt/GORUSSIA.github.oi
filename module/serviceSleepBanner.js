@@ -73,8 +73,7 @@ export const serviceSleepBannerFunc = () => {
     if (indexSlide < 0) indexSlide = sleepServiceBase.banner.length - 1;
     if (indexSlide >= sleepServiceBase.banner.length) indexSlide = 0;
     renderSlide();
-    setTimeout(()=> renderService(),500)
-   
+    setTimeout(() => renderService(), 500);
   }
   function renderSlide() {
     containerSliderElem.style = "transition: opacity 0.5s ease-in; opacity: 0;";
@@ -95,7 +94,10 @@ export const serviceSleepBannerFunc = () => {
       let navService = "";
 
       if (typeof elem.description === "number") {
-        if (sleepServiceBase.banner[indexSlide].serviceSleep.length - 1 === index) {
+        if (
+          sleepServiceBase.banner[indexSlide].serviceSleep.length - 1 ===
+          index
+        ) {
           price += elem.description;
           description = intlObj.NumberFormat("en-EN").format(price);
         } else
@@ -127,14 +129,21 @@ export const serviceSleepBannerFunc = () => {
             `
       );
       if (navService) {
-        document.getElementById(`btn_minus_service_${index}`).onclick = () => {
-          const elem = sleepServiceBase.banner[indexSlide].serviceSleep[index].description;
+        const btnMinus = document.getElementById(`btn_minus_service_${index}`);
+        btnMinus.onclick = () => {
+          const elem =
+            sleepServiceBase.banner[indexSlide].serviceSleep[index].description;
           if (elem - 1 > 0)
-            sleepServiceBase.banner[indexSlide].serviceSleep[index].description = elem - 1;
+            sleepServiceBase.banner[indexSlide].serviceSleep[
+              index
+            ].description = elem - 1;
           renderService();
         };
-        document.getElementById(`btn_plus_service_${index}`).onclick = () => {
-          sleepServiceBase.banner[indexSlide].serviceSleep[index].description += 1;
+        const btnPlus = document.getElementById(`btn_plus_service_${index}`);
+        btnPlus.onclick = () => {
+          sleepServiceBase.banner[indexSlide].serviceSleep[
+            index
+          ].description += 1;
           renderService();
         };
       }

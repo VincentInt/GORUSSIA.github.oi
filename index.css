@@ -2,8 +2,10 @@ body {
   padding: 0;
   margin: 0;
   background-color: rgba(23, 25, 25, 1);
+  padding-bottom: 150px;
 }
 h1,
+button,
 h2,
 h3,
 h4,
@@ -428,6 +430,61 @@ button {
         text-align: end;
         text-wrap: nowrap;
         writing-mode: vertical-lr;
+      }
+    }
+  }
+}
+.section_shop {
+  margin-top: 300px;
+  padding: 0px 140px;
+  .container_shop {
+    display: flex;
+    margin-top: 150px;
+    align-items: start;
+    .upper_text {
+      text-align: start;
+    }
+
+    .container_description_goods {
+      width: 530px;
+      .category_text {
+        font-weight: 300;
+        line-height: 86px;
+      }
+      .container_price {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 420px;
+        margin-top: 100px;
+        .btn_sell {
+          padding: 12px 30px;
+          font-size: 38px;
+          font-weight: 700;
+          border-radius: 8px;
+          color: white;
+          background-color: aqua;
+        }
+      }
+    }
+    .container_img_goods {
+      margin-left: 200px;
+      .img_goods {
+        max-width: 800px;
+        max-height: 1000px;
+      }
+    }
+    .container_nav_goods {
+      display: flex;
+      justify-content: space-between;
+      width: 80px;
+      margin-top: -80px;
+      .btn_arrow_goods {
+        filter: contrast(40%);
+        &:last-child {
+          margin-top: -10px;
+          rotate: 180deg;
+        }
       }
     }
   }
