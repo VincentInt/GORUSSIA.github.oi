@@ -11,7 +11,7 @@ const pointBaseArray = [
   { city: "Владивосток", top: 76, left: 86.5 },
   { city: "Казань", top: 47.5, left: 15 },
   { city: "Екатеринбург", top: 52.5, left: 25 },
-  { city: "Якутия", top: 33.5, left: 77 },
+  { city: "Якутск", top: 33.5, left: 77 },
   { city: "Новосибирск", top: 60.5, left: 42 },
   { city: "Сахалин", top: 55.5, left: 90 },
 ];
