@@ -379,13 +379,18 @@ button {
         display: flex;
         justify-content: end;
         margin-top: 20px;
+        .arrow_btn{
+          display: flex;
+          justify-content: space-between;
+          width: 80px;
+        
         .btn_slide_arrow {
           filter: brightness(70%);
           &:nth-child(2) {
-            margin-top: -8px;
+            margin-top: -10px;
             rotate: 180deg;
           }
-        }
+        }}
       }
     }
   }
@@ -511,7 +516,7 @@ button {
   position: relative;
   display: flex;
   align-items: start;
-  margin-top: 300px;
+  margin-top: 500px;
   margin-bottom: -80px;
   padding: 50px 120px;
   padding-bottom: 0px;

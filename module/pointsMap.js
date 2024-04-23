@@ -2,6 +2,18 @@ const pointBaseArray = [
   { city: "Москва", top: 38, left: 13.5 },
   { city: "Краснодар", top: 55, left: 4 },
   { city: "Сочи", top: 57, left: 2 },
+  { city: "Севастополь", top: 47.5, left: -1 },
+  { city: "Калининград", top: 23, left: 4 },
+  { city: "Чебоксары", top: 37, left: 20 },
+  { city: "Астрахань", top: 58, left: 9 },
+  { city: "Иркутск", top: 70, left: 58 },
+  { city: "Санкт-Петербург", top: 24, left: 17.5 },
+  { city: "Владивосток", top: 76, left: 86.5 },
+  { city: "Казань", top: 47.5, left: 15 },
+  { city: "Екатеринбург", top: 52.5, left: 25 },
+  { city: "Якутия", top: 33.5, left: 77 },
+  { city: "Новосибирск", top: 60.5, left: 42 },
+  { city: "Сахалин", top: 55.5, left: 90 },
 ];
 export const pointsMapFunc = () => {
   const USER_KEY_WEATHER_API = "aa78c371f61da4559495da8ca2eeca61";
