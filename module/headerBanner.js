@@ -16,7 +16,7 @@ const slidesBaseArray = [
     city: "Москва",
     uniqueness: "Крупнейший город РФ",
     terrain: "Москва река",
-  }
+  },
 ];
 export const bannerMainFunc = () => {
   let indexSlide = 0;
@@ -29,6 +29,10 @@ export const bannerMainFunc = () => {
   const uniquenessBannerTextElem = document.getElementById(
     "uniqueness_banner_text"
   );
+  const locationCityElem = document.getElementById("location_city");
+  const hoursElem = document.getElementById("hours");
+  const daysElem = document.getElementById("days");
+  const yearsElem = document.getElementById("years");
   const leftBannerBtnElem = document.getElementById("left_banner_btn");
   const rigthBannerBtnElem = document.getElementById("rigth_banner_btn");
 
@@ -87,6 +91,32 @@ export const bannerMainFunc = () => {
       moveBanner(true);
     }, 5000);
   }
+  async function getCityUsers(lat, long) {
+    const URL_NOMINATIM = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${long}`;
+    const cityLocation = await fetch(URL_NOMINATIM)
+      .then((prev) => prev.json())
+      .then((json) => json.address.city)
+      .catch((err) => console.error(err));
+    locationCityElem.innerText = cityLocation;
+  }
+  function getGeolocation() {
+    const showGeolocation = (show) => {
+      const { latitude, longitude } = show.coords;
+      getCityUsers(latitude, longitude);
+    };
+    const errorGeolocation = (error) => {
+      console.error(error.messege);
+    };
+    navigator.geolocation.getCurrentPosition(showGeolocation, errorGeolocation);
+  }
+  function getTimeZone() {
+    const dateObj = new Date();
+    hoursElem.innerText = dateObj.getHours();
+    daysElem.innerText = dateObj.getDate()
+    yearsElem.innerText = `${dateObj.getFullYear()}`.slice(2);
+  }
   renderSlidesStateBanner();
   renderSlideBanner();
+  getGeolocation();
+  getTimeZone();
 };
