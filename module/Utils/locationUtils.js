@@ -18,7 +18,6 @@ export const calculateDistance = async (renderFunc, bannerObj) => {
   );
 
   navigator.geolocation.getCurrentPosition(longDistance, err);
-removal of the distance to the airport
   function longDistance({ coords }) {
     function toRadians(degrees) {
       return degrees * (Math.PI / 180);
