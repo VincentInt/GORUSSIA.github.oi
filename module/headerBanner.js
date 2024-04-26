@@ -112,7 +112,7 @@ export const bannerMainFunc = () => {
   function getTimeZone() {
     const dateObj = new Date();
     hoursElem.innerText = dateObj.getHours();
-    daysElem.innerText = dateObj.getDate()
+    daysElem.innerText = dateObj.getDate();
     yearsElem.innerText = `${dateObj.getFullYear()}`.slice(2);
   }
   renderSlidesStateBanner();

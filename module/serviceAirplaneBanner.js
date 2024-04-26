@@ -1,12 +1,15 @@
+import { calculateDistance } from "./Utils/locationUtils.js";
+
 const airplaneServiceBase = {
   banner: [
     {
       airportName: "Международный аэропорт Симферополь имени И.К. Айвазовского",
       img: "./img/Аэропорт_Симферополь.jpg",
+      render: false,
       serviceAirplane: [
         {
           category: "Место прибытия",
-          description: "Аэропорт Севастополя",
+          description: "Симферополь",
         },
         { category: "Дистанция", description: 1050, after: "Км" },
         {
@@ -18,11 +21,64 @@ const airplaneServiceBase = {
     },
     {
       airportName: "Международный аэропорт Краснодар имени Екатерины II",
-      img: "./img/original.jpg",
+      img: "./img/scale_1200.png",
+      render: false,
+      city: "Краснодар",
       serviceAirplane: [
         {
           category: "Место прибытия",
-          description: "Аэропорт Краснодар",
+          description: "Краснодар",
+        },
+        { category: "Дистанция", description: 1050, after: "Км" },
+        {
+          category: "Время в пути",
+          description: "4 часа 50 минут",
+        },
+        { category: "Стоимость", description: 60000, after: "Руб" },
+      ],
+    },
+    {
+      airportName: "Международный аэропорт Домоде́дово имени М. В. Ломоносова",
+      img: "./img/756493217026772.jpg",
+      render: false,
+      serviceAirplane: [
+        {
+          category: "Место прибытия",
+          description: "Москва",
+        },
+        { category: "Дистанция", description: 1050, after: "Км" },
+        {
+          category: "Время в пути",
+          description: "4 часа 50 минут",
+        },
+        { category: "Стоимость", description: 60000, after: "Руб" },
+      ],
+    },
+    {
+      airportName: "Международный аэропорт Пулково в Санкт-Петербурге",
+      img: "./img/241ab8f0194549328ee28157476592fd.jpeg",
+      render: false,
+      serviceAirplane: [
+        {
+          category: "Место прибытия",
+          description: "Санкт-Петербург",
+        },
+        { category: "Дистанция", description: 1050, after: "Км" },
+        {
+          category: "Время в пути",
+          description: "4 часа 50 минут",
+        },
+        { category: "Стоимость", description: 60000, after: "Руб" },
+      ],
+    },
+    {
+      airportName: "Аэропорт Казань им. Габдуллы Тукая",
+      img: "./img/0.934863001606908602.jpg",
+      render: false,
+      serviceAirplane: [
+        {
+          category: "Место прибытия",
+          description: "Казань",
         },
         { category: "Дистанция", description: 1050, after: "Км" },
         {
@@ -75,23 +131,29 @@ export const serviceAirplaneBannerFunc = () => {
         "transition: opacity 0.5s ease-in; opacity: 100;";
     }, 500);
   }
-  function renderService() {
+  async function renderService() {
+    const bannerElem = airplaneServiceBase.banner[indexSlide];
     containerServiceElem.innerHTML = "";
-    airplaneServiceBase.banner[indexSlide].serviceAirplane.forEach((elem) => {
-      let description = elem.description;
-      if (typeof elem.description === "number")
-        description = intlObj.NumberFormat("en-EN").format(elem.description);
-      if (elem.after !== undefined) description += " " + elem.after;
-      containerServiceElem.insertAdjacentHTML(
-        "beforeend",
-        `
-            <div class="item_plane">
-                <h4 class="upper_text prev_text">${elem.category}</h4>
-                <h2 class="upper_text">${description}</h2>
-            </div>
+    if (bannerElem.render) {
+      bannerElem.serviceAirplane.forEach((elem) => {
+        let description = elem.description;
+
+        if (typeof elem.description === "number")
+          description = intlObj.NumberFormat("en-EN").format(elem.description);
+        if (elem.after !== undefined) description += " " + elem.after;
+        containerServiceElem.insertAdjacentHTML(
+          "beforeend",
           `
-      );
-    });
+              <div class="item_plane">
+                  <h4 class="upper_text prev_text">${elem.category}</h4>
+                  <h2 class="upper_text">${description}</h2>
+              </div>
+            `
+        );
+      });
+    } else {
+      await calculateDistance(renderService, bannerElem);
+    }
   }
   renderSlide();
   renderService();

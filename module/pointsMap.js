@@ -1,3 +1,5 @@
+import { searchCityApi } from "./Utils/locationUtils.js";
+
 const pointBaseArray = [
   { city: "Москва", top: 38, left: 13.5 },
   { city: "Краснодар", top: 55, left: 4 },
@@ -17,8 +19,6 @@ const pointBaseArray = [
 ];
 export const pointsMapFunc = () => {
   const USER_KEY_WEATHER_API = "aa78c371f61da4559495da8ca2eeca61";
-  const SEARCH_CITY_WEATHER_API =
-    "http://api.openweathermap.org/geo/1.0/direct";
   const INFO_WEATHER_CITY_WEATHER_API =
     "https://api.openweathermap.org/data/2.5/weather";
   let currentPoint = null;
@@ -80,12 +80,7 @@ export const pointsMapFunc = () => {
   async function getWeatherInfoCity(item) {
     if (getsWeatherObj[item.city]) return getsWeatherObj[item.city];
 
-    const cityItem = await fetch(
-      `${SEARCH_CITY_WEATHER_API}?q=${item.city}&limit=1&appid=${USER_KEY_WEATHER_API}`
-    )
-      .then((res) => res.json())
-      .then((json) => json[0])
-      .catch((err) => console.error(err));
+    const cityItem = await searchCityApi(item.city)
     const cityWeatherItem = await fetch(
       `${INFO_WEATHER_CITY_WEATHER_API}?lat=${cityItem.lat}&lon=${cityItem.lon}&appid=${USER_KEY_WEATHER_API}&units=metric`
     )
