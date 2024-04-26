@@ -1,0 +1,89 @@
+{
+  "banner": [
+    {
+      "airportName": "Международный аэропорт Симферополь имени И.К. Айвазовского",
+      "img": "./img/Аэропорт_Симферополь.jpg",
+      "render": false,
+      "serviceAirplane": [
+        {
+          "category": "Место прибытия",
+          "description": "Симферополь"
+        },
+        { "category": "Дистанция", "description": 1050, "after": "Км" },
+        {
+          "category": "Время в пути",
+          "description": "4 часа 50 минут"
+        },
+        { "category": "Стоимость", "description": 50000, "after": "Руб" }
+      ]
+    },
+    {
+      "airportName": "Международный аэропорт Краснодар имени Екатерины II",
+      "img": "./img/scale_1200.png",
+      "render": false,
+      "serviceAirplane": [
+        {
+          "category": "Место прибытия",
+          "description": "Краснодар"
+        },
+        { "category": "Дистанция", "description": 1050, "after": "Км" },
+        {
+          "category": "Время в пути",
+          "description": "4 часа 50 минут"
+        },
+        { "category": "Стоимость", "description": 60000, "after": "Руб" }
+      ]
+    },
+    {
+      "airportName": "Международный аэропорт Домоде́дово имени М. В. Ломоносова",
+      "img": "./img/756493217026772.jpg",
+      "render": false,
+      "serviceAirplane": [
+        {
+          "category": "Место прибытия",
+          "description": "Москва"
+        },
+        { "category": "Дистанция", "description": 1050, "after": "Км" },
+        {
+          "category": "Время в пути",
+          "description": "4 часа 50 минут"
+        },
+        { "category": "Стоимость", "description": 60000, "after": "Руб" }
+      ]
+    },
+    {
+      "airportName": "Международный аэропорт Пулково в Санкт-Петербурге",
+      "img": "./img/241ab8f0194549328ee28157476592fd.jpeg",
+      "render": false,
+      "serviceAirplane": [
+        {
+          "category": "Место прибытия",
+          "description": "Санкт-Петербург"
+        },
+        { "category": "Дистанция", "description": 1050, "after": "Км" },
+        {
+          "category": "Время в пути",
+          "description": "4 часа 50 минут"
+        },
+        { "category": "Стоимость", "description": 60000, "after": "Руб" }
+      ]
+    },
+    {
+      "airportName": "Аэропорт Казань им. Габдуллы Тукая",
+      "img": "./img/0.934863001606908602.jpg",
+      "render": false,
+      "serviceAirplane": [
+        {
+          "category": "Место прибытия",
+          "description": "Казань"
+        },
+        { "category": "Дистанция", "description": 1050, "after": "Км" },
+        {
+          "category": "Время в пути",
+          "description": "4 часа 50 минут"
+        },
+        { "category": "Стоимость", "description": 60000, "after": "Руб" }
+      ]
+    }
+  ]
+}
