@@ -6,11 +6,11 @@
       "serviceSleep": [
         {
           "category": "Курорт",
-          "description": "Отель Симферополя"
+          "description": "Отели Симферополя"
         },
         {
           "category": "Ночей",
-          "servicePrice": 18000,
+          "servicePrice": 1800,
           "description": 1,
           "after": "Ночь"
         },
@@ -20,20 +20,20 @@
           "description": 1,
           "after": "гостей"
         },
-        { "category": "Стоимость", "description": 50000, "after": "Руб" }
+        { "category": "Стоимость", "description": 5000, "after": "Руб" }
       ]
     },
     {
-      "resortName": "Отель Goldan tulip hotel",
+      "resortName": "Отели Goldan tulip hotel",
       "img": "./img/JmauQ7mMRxU.jpg",
       "serviceSleep": [
         {
           "category": "Курорт",
-          "description": "Отель Краснодара"
+          "description": "Отели Краснодара"
         },
         {
           "category": "Ночей",
-          "servicePrice": 18000,
+          "servicePrice": 2500,
           "description": 1,
           "after": "Ночь"
         },
@@ -43,54 +43,54 @@
           "description": 1,
           "after": "гостей"
         },
-        { "category": "Стоимость", "description": 50000, "after": "Руб" }
+        { "category": "Стоимость", "description": 4000, "after": "Руб" }
       ]
     },
     {
-        "resortName": "отель National",
-        "img": "./img/scale_2400.jpg",
-        "serviceSleep": [
-          {
-            "category": "Курорт",
-            "description": "Отель Москвы"
-          },
-          {
-            "category": "Ночей",
-            "servicePrice": 18000,
-            "description": 1,
-            "after": "Ночь"
-          },
-          {
-            "category": "Гостей",
-            "servicePrice": 2000,
-            "description": 1,
-            "after": "гостей"
-          },
-          { "category": "Стоимость", "description": 50000, "after": "Руб" }
-        ]
-      },
-      {
-        "resortName": "Отель Grand Kazan Hotel",
-        "img": "./img/_MG_5390.jpg",
-        "serviceSleep": [
-          {
-            "category": "Курорт",
-            "description": "Отель Казани"
-          },
-          {
-            "category": "Ночей",
-            "servicePrice": 18000,
-            "description": 1,
-            "after": "Ночь"
-          },
-          {
-            "category": "Гостей",
-            "servicePrice": 2000,
-            "description": 1,
-            "after": "гостей"
-          },
-          { "category": "Стоимость", "description": 50000, "after": "Руб" }
-        ]
-      }
+      "resortName": "Отели National",
+      "img": "./img/scale_2400.jpg",
+      "serviceSleep": [
+        {
+          "category": "Курорт",
+          "description": "Отели Москвы"
+        },
+        {
+          "category": "Ночей",
+          "servicePrice": 2500,
+          "description": 1,
+          "after": "Ночь"
+        },
+        {
+          "category": "Гостей",
+          "servicePrice": 2000,
+          "description": 1,
+          "after": "гостей"
+        },
+        { "category": "Стоимость", "description": 8000, "after": "Руб" }
+      ]
+    },
+    {
+      "resortName": "Отели Grand Kazan Hotel",
+      "img": "./img/_MG_5390.jpg",
+      "serviceSleep": [
+        {
+          "category": "Курорт",
+          "description": "Отели Казани"
+        },
+        {
+          "category": "Ночей",
+          "servicePrice": 1900,
+          "description": 1,
+          "after": "Ночь"
+        },
+        {
+          "category": "Гостей",
+          "servicePrice": 2000,
+          "description": 1,
+          "after": "гостей"
+        },
+        { "category": "Стоимость", "description": 7000, "after": "Руб" }
+      ]
+    }
   ]
 }

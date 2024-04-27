@@ -355,7 +355,6 @@ button {
       min-width: 1000px;
       height: 580px;
       margin-left: 140px;
-      border-radius: 18px;
       box-shadow: 0px 0px 70px 10px rgba(0, 0, 0, 0.494);
       .img_slide {
        width: 105%;
@@ -436,7 +435,7 @@ button {
     .item_plane {
       display: flex;
       justify-content: left;
-      width: 320px;
+      width: 280px;
       margin-right: 20px;
       .container_btn_service {
         display: flex;
@@ -448,6 +447,7 @@ button {
         }
       }
       .upper_text {
+        word-break: break-word;
         text-align: left;
       }
       .prev_text {
@@ -462,7 +462,7 @@ button {
   }
 }
 .section_shop {
-  margin-top: 300px;
+  margin-top: 200px;
   padding: 0px 140px;
   .container_shop {
     display: flex;

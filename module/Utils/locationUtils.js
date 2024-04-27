@@ -14,7 +14,7 @@ export const calculateDistance = async (renderFunc, bannerObj) => {
   let distance = null;
   const earthRadius = 6371;
   const whereCity = await searchCityApi(
-    bannerObj.serviceAirplane[0].description
+    bannerObj.city
   );
 
   navigator.geolocation.getCurrentPosition(longDistance, err);
@@ -24,7 +24,7 @@ export const calculateDistance = async (renderFunc, bannerObj) => {
     }
     const cities = {
       myCity: {
-        lat: toRadians(coords.latitude - 10),
+        lat: toRadians(coords.latitude),
         lon: toRadians(coords.longitude),
       },
       whereCity: {

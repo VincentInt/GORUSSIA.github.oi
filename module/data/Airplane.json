@@ -2,12 +2,13 @@
   "banner": [
     {
       "airportName": "Международный аэропорт Симферополь имени И.К. Айвазовского",
+      "city": "Симферополь",
       "img": "./img/Аэропорт_Симферополь.jpg",
       "render": false,
       "serviceAirplane": [
         {
           "category": "Место прибытия",
-          "description": "Симферополь"
+          "description": "Аэропорт Симферополь"
         },
         { "category": "Дистанция", "description": 1050, "after": "Км" },
         {
@@ -19,12 +20,13 @@
     },
     {
       "airportName": "Международный аэропорт Краснодар имени Екатерины II",
+      "city": "Краснодар",
       "img": "./img/scale_1200.png",
       "render": false,
       "serviceAirplane": [
         {
           "category": "Место прибытия",
-          "description": "Краснодар"
+          "description": "Аэропорт Краснодар"
         },
         { "category": "Дистанция", "description": 1050, "after": "Км" },
         {
@@ -36,12 +38,13 @@
     },
     {
       "airportName": "Международный аэропорт Домоде́дово имени М. В. Ломоносова",
+      "city": "Москва",
       "img": "./img/756493217026772.jpg",
       "render": false,
       "serviceAirplane": [
         {
           "category": "Место прибытия",
-          "description": "Москва"
+          "description": "Аэропорт Москва"
         },
         { "category": "Дистанция", "description": 1050, "after": "Км" },
         {
@@ -53,12 +56,13 @@
     },
     {
       "airportName": "Международный аэропорт Пулково в Санкт-Петербурге",
+      "city": "Санкт-Петербург",
       "img": "./img/241ab8f0194549328ee28157476592fd.jpeg",
       "render": false,
       "serviceAirplane": [
         {
           "category": "Место прибытия",
-          "description": "Санкт-Петербург"
+          "description": "Аэропорт Санкт-Петербург"
         },
         { "category": "Дистанция", "description": 1050, "after": "Км" },
         {
@@ -70,12 +74,13 @@
     },
     {
       "airportName": "Аэропорт Казань им. Габдуллы Тукая",
+      "city": "Казань",
       "img": "./img/0.934863001606908602.jpg",
       "render": false,
       "serviceAirplane": [
         {
           "category": "Место прибытия",
-          "description": "Казань"
+          "description": "Аэропорт Казань"
         },
         { "category": "Дистанция", "description": 1050, "after": "Км" },
         {
