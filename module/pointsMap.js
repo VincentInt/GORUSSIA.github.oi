@@ -1,22 +1,5 @@
 import { searchCityApi } from "./Utils/locationUtils.js";
-
-const pointBaseArray = [
-  { city: "Москва", top: 38, left: 13.5 },
-  { city: "Краснодар", top: 55, left: 4 },
-  { city: "Сочи", top: 57, left: 2 },
-  { city: "Севастополь", top: 47.5, left: -1 },
-  { city: "Калининград", top: 23, left: 4 },
-  { city: "Чебоксары", top: 37, left: 20 },
-  { city: "Астрахань", top: 58, left: 9 },
-  { city: "Иркутск", top: 70, left: 58 },
-  { city: "Санкт-Петербург", top: 24, left: 17.5 },
-  { city: "Владивосток", top: 76, left: 86.5 },
-  { city: "Казань", top: 47.5, left: 15 },
-  { city: "Екатеринбург", top: 52.5, left: 25 },
-  { city: "Якутск", top: 33.5, left: 77 },
-  { city: "Новосибирск", top: 60.5, left: 42 },
-  { city: "Сахалин", top: 55.5, left: 90 },
-];
+import pointBaseArray from "./data/PointMap.json" assert {type: "json"}
 export const pointsMapFunc = () => {
   const USER_KEY_WEATHER_API = "aa78c371f61da4559495da8ca2eeca61";
   const INFO_WEATHER_CITY_WEATHER_API =
@@ -31,24 +14,24 @@ export const pointsMapFunc = () => {
 
       mapPointsElem.insertAdjacentHTML(
         "afterbegin",
-        `<div style="top:${pointItem.top - 13}%; left:${
+        `<div style="top:${pointItem.top - 18}%; left:${
           pointItem.left
         }%;" id="info_point" class="container_info_point">
             <h2 class="info_text">${pointItem.city}</h2>
             <div class="container_info">
-                <div>
+                <div class="item_info">
                   <div class="container_point_icon">
                     <img class="icon point_icon" src="./img/icon/thermometer-half_5070429.png" alt="temp_logo"/>
                   </div>
                     <h5>${itemWeather.temp}°C</h5>
                 </div>
-                <div>
+                <div  class="item_info">
                   <div class="container_point_icon">
                     <img class="icon point_icon" src="./img/icon/cloud-showers-heavy_6853872.png" alt="rain_logo"/>
                   </div>
                     <h5>${itemWeather.clouds}%</h5>
                 </div>
-                <div>
+                <div  class="item_info">
                   <div class="container_point_icon">
                     <img class="icon point_icon" src="./img/icon/wind_5070417.png" alt="wind_logo"/>
                   </div>

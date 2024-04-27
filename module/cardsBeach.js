@@ -1,25 +1,5 @@
-const beachsBaseArray = [
-  {
-    img: "./img/1648743696_46-vsegda-pomnim-com-p-ozero-donuzlav-foto-48.jpg",
-    beachName: "Крымский пляж",
-    locate: { region: "Крымский полуостров", beachLocate: "Коса Беляус" },
-  },
-  {
-    img: "./img/005.jpg",
-    beachName: "Звездный пляж",
-    locate: { region: "Краснодарский край", beachLocate: "Сочи" },
-  },
-  {
-    img: "./img/1649362158_5-vsegda-pomnim-com-p-plyazh-levoberezhnii-foto-6.jpg",
-    beachName: "Левобереж пляж",
-    locate: { region: "Чувашская республика", beachLocate: "Чебоксары" },
-  },
-  {
-    img: "./img/WhatsApp-Image-2023-05-30-at-16.47.51.jpeg",
-    beachName: "Балтийский пляж",
-    locate: { region: "Калининградская область", beachLocate: "Балтийск" },
-  },
-];
+import beachsBaseArray from "./data/Beach.json" assert { type: "json" };
+
 export const cardsBeachFunc = () => {
   const beachCardsElem = document.getElementById("container_beach_cards");
   beachsBaseArray.forEach((elem) => {

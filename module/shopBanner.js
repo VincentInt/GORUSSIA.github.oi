@@ -1,17 +1,5 @@
-const goodsShopBase = {
-  banner: [
-    {
-      img: "./img/pngwing.com.png",
-      goodsName: "Водный бластер с спусковым затвор",
-      price: 1599,
-    },
-    {
-        img: "./img/pngegg.png",
-        goodsName: "Шлепки пляжные сероватые",
-        price: 1299
-    }
-  ],
-};
+import goodsShopBase from "./data/Shop.json" assert {type: "json"}
+
 export const shopBannerFunc = () => {
   let indexSlide = 0;
   const intlObj = Intl;
@@ -36,7 +24,7 @@ export const shopBannerFunc = () => {
   }
   function renderSlide() {
     const elem = goodsShopBase.banner[indexSlide];
-
+  
     mainContainerSlideShopElem.style =
       "transition: opacity 0.5s ease-in; opacity: 0;";
     setTimeout(() => {

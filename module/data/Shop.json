@@ -1,0 +1,14 @@
+{
+  "banner": [
+    {
+      "img": "./img/pngwing.com.png",
+      "goodsName": "Водный бластер с спусковым затвор",
+      "price": 1599
+    },
+    {
+      "img": "./img/pngegg.png",
+      "goodsName": "Шлепки пляжные сероватые",
+      "price": 1299
+    }
+  ]
+}

@@ -1,23 +1,5 @@
-const slidesBaseArray = [
-  {
-    img: "./img/sochi-2.jpg",
-    city: "Сочи",
-    uniqueness: "Тропический климат",
-    terrain: "Красная поляна",
-  },
-  {
-    img: "./img/1663378251_1-mykaleidoscope-ru-p-krasnodar-stadion-galitskogo-krasivo-1.jpg",
-    city: "Краснодар",
-    uniqueness: "Столица европейского юга",
-    terrain: "Парк Галицкого",
-  },
-  {
-    img: "./img/259607761-1536x1079.jpg",
-    city: "Москва",
-    uniqueness: "Крупнейший город РФ",
-    terrain: "Москва река",
-  },
-];
+import slidesBaseArray from "./data/Header.json" assert {type: "json"}
+
 export const bannerMainFunc = () => {
   let indexSlide = 0;
   let stateItem = document.getElementById(`line_state_slider_${indexSlide}`);
