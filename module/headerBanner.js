@@ -30,8 +30,8 @@ export const bannerMainFunc = () => {
     "uniqueness_banner_text"
   );
   const locationCityElem = document.getElementById("location_city");
-  const hoursElem = document.getElementById("hours");
   const daysElem = document.getElementById("days");
+  const monthElem = document.getElementById("month");
   const yearsElem = document.getElementById("years");
   const leftBannerBtnElem = document.getElementById("left_banner_btn");
   const rigthBannerBtnElem = document.getElementById("rigth_banner_btn");
@@ -73,9 +73,8 @@ export const bannerMainFunc = () => {
       <div class="item_slide">
         <div class="line"><div id="line_state_slider_${index}"></div></div>
         <div class="container_text">
-          <h3 class="number_slide_text">${
-            indexSlide < 10 ? `0${indexSlide}` : index
-          }</h3>
+          <h3 class="number_slide_text">${indexSlide < 10 ? `0${indexSlide}` : index
+        }</h3>
           <h4 class="name_slide_text">${elem.terrain}</h4>
         </div>
       </div>`
@@ -111,9 +110,15 @@ export const bannerMainFunc = () => {
   }
   function getTimeZone() {
     const dateObj = new Date();
-    hoursElem.innerText = dateObj.getHours();
-    daysElem.innerText = dateObj.getDate();
-    yearsElem.innerText = `${dateObj.getFullYear()}`.slice(2);
+
+    let day = dateObj.getDate();
+    let month = JSON.stringify(dateObj.getMonth() + 1);
+    let years = `${dateObj.getFullYear()}`.slice(2);
+    month.length < 10 ? month = `0${month}` : false
+
+    daysElem.innerText = day;
+    monthElem.innerText = month;
+    yearsElem.innerText = years;
   }
   renderSlidesStateBanner();
   renderSlideBanner();
