@@ -2,13 +2,18 @@
   "banner": [
     {
       "img": "./img/pngwing.com.png",
-      "goodsName": "Водный бластер с спусковым затвор",
+      "titleName": "Водный бластер с спусковым затвор",
       "price": 1599
     },
     {
       "img": "./img/pngegg.png",
-      "goodsName": "Шлепки пляжные сероватые",
+      "titleName": "Шлепки пляжные сероватые",
       "price": 1299
+    },
+    {
+      "img": "./img/vosmiklinka13-columbia-chyornaya-1900x1060.png",
+      "titleName": "Кепка DENKOR Восьмилинка",
+      "price": 2899
     }
   ]
 }

@@ -502,7 +502,7 @@ button {
     }
     .container_img_goods {
       margin-left: 200px;
-      .img_goods {
+      .img_slide {
         max-width: 800px;
         max-height: 1000px;
       }

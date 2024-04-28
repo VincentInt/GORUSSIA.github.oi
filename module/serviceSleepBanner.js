@@ -1,6 +1,7 @@
-import sleepServiceBase from "./data/Sleep.json" assert {type: "json"} 
+import sleepServiceBase from "./data/Sleep.json" assert { type: "json" };
+import { MainSliderUtils } from "./Utils/SliderUtils.js";
+
 export const serviceSleepBannerFunc = () => {
-  let indexSlide = 0;
   const intlObj = Intl;
 
   const containerSliderElem = document.getElementById(
@@ -11,44 +12,32 @@ export const serviceSleepBannerFunc = () => {
   );
   const slideImgElem = document.getElementById("img_slide_servise_sleep");
   const nameSlideElem = document.getElementById("service_sleep_name_resort");
+
   const leftArrowElem = document.getElementById("btn_left_arrow_service_sleep");
   const rigthArrowElem = document.getElementById(
     "btn_rigth_arrow_service_sleep"
   );
 
-  leftArrowElem.onclick = () => moveSlide(false);
-  rigthArrowElem.onclick = () => moveSlide(true);
-
-  function moveSlide(move) {
-    move ? (indexSlide += 1) : (indexSlide -= 1);
-    if (indexSlide < 0) indexSlide = sleepServiceBase.banner.length - 1;
-    if (indexSlide >= sleepServiceBase.banner.length) indexSlide = 0;
-    renderSlide();
-    setTimeout(() => renderService(), 500);
-  }
-  function renderSlide() {
-    containerSliderElem.style = "transition: opacity 0.5s ease-in; opacity: 0;";
-    setTimeout(() => {
-      slideImgElem.src = `${sleepServiceBase.banner[indexSlide].img}`;
-      nameSlideElem.innerText = `${sleepServiceBase.banner[indexSlide].resortName}`;
-
-      containerSliderElem.style =
-        "transition: opacity 0.5s ease-in; opacity: 100;";
-    }, 500);
-  }
+  const SleepSlider = new MainSliderUtils(
+    leftArrowElem,
+    rigthArrowElem,
+    containerSliderElem,
+    containerServiceElem,
+    slideImgElem,
+    nameSlideElem,
+    sleepServiceBase,
+    renderService
+  );
   function renderService() {
-    containerServiceElem.innerHTML = "";
-
     let price = 0;
-    sleepServiceBase.banner[indexSlide].serviceSleep.forEach((elem, index) => {
+    
+    SleepSlider.cotnainerSlider.innerHTML = "";
+    SleepSlider.itemSlide.serviceArray.forEach((elem, index) => {
       let description = elem.description;
       let navService = "";
 
       if (typeof elem.description === "number") {
-        if (
-          sleepServiceBase.banner[indexSlide].serviceSleep.length - 1 ===
-          index
-        ) {
+        if (SleepSlider.itemSlide.serviceArray.length - 1 === index) {
           price += elem.description;
           description = intlObj.NumberFormat("en-EN").format(price);
         } else
@@ -82,24 +71,20 @@ export const serviceSleepBannerFunc = () => {
       if (navService) {
         const btnMinus = document.getElementById(`btn_minus_service_${index}`);
         btnMinus.onclick = () => {
-          const elem =
-            sleepServiceBase.banner[indexSlide].serviceSleep[index].description;
+          const elem = SleepSlider.itemSlide.serviceArray[index].description;
           if (elem - 1 > 0)
-            sleepServiceBase.banner[indexSlide].serviceSleep[
-              index
-            ].description = elem - 1;
-          renderService();
+            SleepSlider.itemSlide.serviceArray[index].description = elem - 1;
+          SleepSlider.render();
         };
         const btnPlus = document.getElementById(`btn_plus_service_${index}`);
         btnPlus.onclick = () => {
-          sleepServiceBase.banner[indexSlide].serviceSleep[
-            index
-          ].description += 1;
-          renderService();
+          SleepSlider.itemSlide.serviceArray[index].description += 1;
+          SleepSlider.render();
         };
       }
     });
   }
-  renderSlide();
-  renderService();
+
+  SleepSlider.attenuationSlide();
+  SleepSlider.render();
 };

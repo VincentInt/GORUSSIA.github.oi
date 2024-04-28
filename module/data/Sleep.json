@@ -1,9 +1,9 @@
 {
   "banner": [
     {
-      "resortName": "Симферополь Гранд-Отель",
+      "titleName": "Симферополь Гранд-Отель",
       "img": "./img/fe26dc36611d6e9430de8be44206124b.jpg",
-      "serviceSleep": [
+      "serviceArray": [
         {
           "category": "Курорт",
           "description": "Отели Симферополя"
@@ -24,9 +24,9 @@
       ]
     },
     {
-      "resortName": "Отели Goldan tulip hotel",
+      "titleName": "Отели Goldan tulip hotel",
       "img": "./img/JmauQ7mMRxU.jpg",
-      "serviceSleep": [
+      "serviceArray": [
         {
           "category": "Курорт",
           "description": "Отели Краснодара"
@@ -47,9 +47,9 @@
       ]
     },
     {
-      "resortName": "Отели National",
+      "titleName": "Отели National",
       "img": "./img/scale_2400.jpg",
-      "serviceSleep": [
+      "serviceArray": [
         {
           "category": "Курорт",
           "description": "Отели Москвы"
@@ -70,9 +70,9 @@
       ]
     },
     {
-      "resortName": "Отели Grand Kazan Hotel",
+      "titleName": "Отели Grand Kazan Hotel",
       "img": "./img/_MG_5390.jpg",
-      "serviceSleep": [
+      "serviceArray": [
         {
           "category": "Курорт",
           "description": "Отели Казани"

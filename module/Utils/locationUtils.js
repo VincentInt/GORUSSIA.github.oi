@@ -13,6 +13,7 @@ export const searchCityApi = async (cityName) => {
 export const calculateDistance = async (renderFunc, bannerObj) => {
   let distance = null;
   const earthRadius = 6371;
+  
   const whereCity = await searchCityApi(
     bannerObj.city
   );
@@ -47,10 +48,10 @@ export const calculateDistance = async (renderFunc, bannerObj) => {
         Math.sqrt(1 - gaversinusesDifference)
       );
     distance = Math.ceil(earthRadius * centralAngle);
-
-    bannerObj.serviceAirplane[1].description = distance;
-    bannerObj.serviceAirplane[2].description = getTime(distance);
-    bannerObj.serviceAirplane[3].description = Math.ceil(distance * 50);
+    const serviceArray = bannerObj.serviceArray
+    serviceArray[1].description = distance;
+    serviceArray[2].description = getTime(distance);
+    serviceArray[3].description = Math.ceil(distance * 50);
     bannerObj.render = true;
     renderFunc();
   }

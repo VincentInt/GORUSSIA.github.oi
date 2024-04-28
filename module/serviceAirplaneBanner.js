@@ -1,8 +1,8 @@
+import airplaneServiceBase from "./data/Airplane.json" assert { type: "json" };
 import { calculateDistance } from "./Utils/locationUtils.js";
-import airplaneServiceBase from "./data/Airplane.json" assert { type: "json" }
+import { MainSliderUtils } from "./Utils/SliderUtils.js";
 
 export const serviceAirplaneBannerFunc = () => {
-  let indexSlide = 0;
   const intlObj = Intl;
 
   const containerSliderElem = document.getElementById(
@@ -22,50 +22,39 @@ export const serviceAirplaneBannerFunc = () => {
     "btn_rigth_arrow_service_airplane"
   );
 
-  leftArrowElem.onclick = () => moveSlide(false);
-  rigthArrowElem.onclick = () => moveSlide(true);
-
-  function moveSlide(move) {
-    move ? (indexSlide += 1) : (indexSlide -= 1);
-    if (indexSlide < 0) indexSlide = airplaneServiceBase.banner.length - 1;
-    if (indexSlide >= airplaneServiceBase.banner.length) indexSlide = 0;
-    renderSlide();
-    setTimeout(() => renderService(), 500);
-  }
-  function renderSlide() {
-    containerSliderElem.style = "transition: opacity 0.5s ease-in; opacity: 0;";
-    setTimeout(() => {
-      slideImgElem.src = `${airplaneServiceBase.banner[indexSlide].img}`;
-      nameSlideElem.innerText = `${airplaneServiceBase.banner[indexSlide].airportName}`;
-
-      containerSliderElem.style =
-        "transition: opacity 0.5s ease-in; opacity: 100;";
-    }, 500);
-  }
+  const AirplaneSlider = new MainSliderUtils(
+    leftArrowElem,
+    rigthArrowElem,
+    containerSliderElem,
+    containerServiceElem,
+    slideImgElem,
+    nameSlideElem,
+    airplaneServiceBase,
+    renderService
+  );
   async function renderService() {
-    const bannerElem = airplaneServiceBase.banner[indexSlide];
-    containerServiceElem.innerHTML = "";
-    if (bannerElem.render) {
-      bannerElem.serviceAirplane.forEach((elem) => {
-        let description = elem.description;
+    AirplaneSlider.cotnainerSlider.innerHTML = "";
 
+    if (AirplaneSlider.itemSlide.render) {
+      AirplaneSlider.itemSlide.serviceArray.forEach((elem) => {
+        let description = elem.description;
         if (typeof elem.description === "number")
           description = intlObj.NumberFormat("en-EN").format(elem.description);
         if (elem.after !== undefined) description += " " + elem.after;
-        containerServiceElem.insertAdjacentHTML(
+        AirplaneSlider.cotnainerSlider.insertAdjacentHTML(
           "beforeend",
           `
-              <div class="item_plane">
-                  <h4 class="upper_text prev_text">${elem.category}</h4>
-                  <h2 class="upper_text">${description}</h2>
-              </div>
-            `
+            <div class="item_plane">
+                <h4 class="upper_text prev_text">${elem.category}</h4>
+                <h2 class="upper_text">${description}</h2>
+            </div>
+          `
         );
       });
     } else {
-      await calculateDistance(renderService, bannerElem);
+      await calculateDistance(renderService, AirplaneSlider.itemSlide);
     }
   }
-  renderSlide();
-  renderService();
+  AirplaneSlider.attenuationSlide();
+  AirplaneSlider.render();
 };
