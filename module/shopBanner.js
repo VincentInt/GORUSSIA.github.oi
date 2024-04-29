@@ -27,7 +27,7 @@ export const shopBannerFunc = () => {
   );
   function renderShop() {
     textPriceElem.innerHTML = `
-      ${ShopBanner.itemSlide.price} РУБ
+      ${intlObj.NumberFormat("en").format(ShopBanner.itemSlide.price)} РУБ
     `;
   }
   ShopBanner.attenuationSlide();

@@ -16,6 +16,7 @@
     />
     <title>GO RUSSIA</title>
   </head>
+
   <body>
     <header class="header_container">
       <div class="background_container">
@@ -34,15 +35,23 @@
                 <img
                   class="icon btn_nav_img"
                   src="./img/icon/map_5074088.png"
-                  alt="shop_icon"
+                  alt="btn_map_icon"
                 />
                 <h5 class="btn_text">карта</h5>
               </button>
               <button class="btn_nav">
                 <img
                   class="icon btn_nav_img"
+                  src="./img/icon/umbrella-beach_9246466.png"
+                  alt="btn_beach_icon"
+                />
+                <h5 class="btn_text">Пляжи</h5>
+              </button>
+              <button class="btn_nav">
+                <img
+                  class="icon btn_nav_img"
                   src="./img/icon/icons8-car-96.png"
-                  alt="shop_icon"
+                  alt="btn_transport_icon"
                 />
                 <h5 class="btn_text">транспорт</h5>
               </button>
@@ -50,7 +59,7 @@
                 <img
                   class="icon btn_nav_img"
                   src="./img/icon/wondicon-ui-free-sleep_111270.png"
-                  alt="shop_icon"
+                  alt="btn_hotel_icon"
                 />
                 <h5 class="btn_text">отели</h5>
               </button>
@@ -58,7 +67,7 @@
                 <img
                   class="icon btn_nav_img"
                   src="./img/icon/shopping-cart_3916630.png"
-                  alt="shop_icon"
+                  alt="btn_shop_icon"
                 />
                 <h5 class="btn_text">магазин</h5>
               </button>
@@ -115,18 +124,28 @@
       </section>
     </header>
     <main>
-      <section class="section_map">
+      <section class="section_map section_elem">
         <div>
-          <h2 class="title_text">Путешествуй по россии</h2>
+          <div class="container_title">
+            <h2 class="title_text">Путешествуй по россии</h2>
+            <h2 class="title_text_background">Путешествуй по россии</h2>
+          </div>
           <div id="map_points" class="container_map">
             <img src="./img/map--hd.png" alt="map_img" />
           </div>
         </div>
       </section>
-      <section id="container_beach_cards" class="section_beach_cards"></section>
+      <section
+        id="container_beach_cards"
+        class="section_beach_cards section_elem"
+      ></section>
+
       <section class="section_banner_services">
-        <h2 class="title_text">Удобства для поездки</h2>
-        <div id="container_slider_service_airplane">
+        <div class="container_title">
+          <h2 class="title_text">Удобства для поездки</h2>
+          <h2 class="title_text_background">Удобства для поездки</h2>
+        </div>
+        <div id="container_slider_service_airplane" class="section_elem">
           <div class="container_slider">
             <div class="container_img_slide">
               <div class="shadow_img_slide"></div>
@@ -177,7 +196,7 @@
           </div>
         </div>
         <div>
-          <div id="container_slider_service_sleep">
+          <div id="container_slider_service_sleep" class="section_elem">
             <div class="container_slider">
               <div class="container_img_slide">
                 <div class="shadow_img_slide"></div>
@@ -228,8 +247,11 @@
           </div>
         </div>
       </section>
-      <section class="section_shop">
-        <h2 class="title_text">Магазин</h2>
+      <section class="section_shop section_elem">
+        <div class="container_title">
+          <h2 class="title_text">Магазин</h2>
+          <h2 class="title_text_background">Магазин</h2>
+        </div>
         <div id="main_container_slide_shop" class="container_shop">
           <div id="container_slide_shop" class="container_description_goods">
             <h3 class="upper_text category_text">Товар:</h3>
@@ -252,23 +274,9 @@
       </section>
     </main>
     <footer class="container_footer">
-      <h4 class="brand_footer">@GO RUSSIA 2024</h4>
-      <div class="item_footer">
-        <p>
-          Сайт был создан для практической демонстрации навыков и не выполняет
-          функцию купле/продажи.
-        </p>
-      </div>
-      <div class="item_footer">
-        <p>
-          Дизайн сайта был взят с
-          <a
-            href="https://www.figma.com/file/Dh3oxsX5naFOuXj2f7a6gy/Go-Surf?type=design&node-id=0-2&mode=design&t=EYVqmZXBdjNa4dUI-0"
-            >ТЫК</a
-          >
-          и переделан по моему желанию.
-        </p>
-      </div>
+      <a href="https://github.com/VincentInt/GORUSSIA.github.oi">
+        <h4 class="brand_footer">@GO RUSSIA 2024 СЛЕДУЙ ЗА МЕЧТОЙ</h4>
+      </a>
     </footer>
     <script type="module" src="./main.js"></script>
   </body>

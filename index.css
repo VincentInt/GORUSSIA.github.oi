@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 body {
   padding: 0;
   margin: 0;
@@ -39,7 +42,7 @@ button {
   font-size: 38px;
   text-transform: uppercase;
 }
-.title_text {
+.title_text, .title_text_background {
   font-size: 48px;
   text-align: left;
   text-transform: uppercase;
@@ -51,6 +54,15 @@ button {
     padding-right: 100px;
     margin-left: -120px;
     border-top: 1px solid rgb(4, 255, 242);
+  }
+}
+.container_title{
+  position: relative;
+  .title_text_background{
+    position: absolute;
+    top: 80%;
+    font-size: 78px;
+    opacity: 2.8%;
   }
 }
 .header_container {
@@ -100,20 +112,20 @@ button {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        padding: 0px 30px;
-        margin-top: 60px;
+        padding: 0px 40px;
+        margin-top: 35px;
         .btn_nav {
-          margin-top: 20px;
+          margin-top: 15px;
           .btn_nav_img {
             width: 32px;
           }
           .btn_text {
-            font-size: 18px;
+            font-size: 15px;
           }
         }
       }
       .container_time {
-        margin-top: 40px;
+        margin-top: 35px;
         .big_time_text {
           font-size: 56px;
         }
@@ -123,7 +135,7 @@ button {
           justify-content: center;
           .small_time_text {
             font-size: 24px;
-            font-weight: 400;
+            font-weight: 500;
             padding: 0px 5px;
             &:first-child {
               border-right: 1px solid white;
@@ -134,13 +146,15 @@ button {
       .container_location {
         display: flex;
         justify-content: center;
-        align-items: end;
+        align-items:  center;
         margin-top: 20px;
         .location_img {
           width: 28px;
         }
         .location_text {
           font-size: 14px;
+          font-weight: 400;
+          padding-top: 2.5px;
           margin-left: 5px;
         }
       }
@@ -222,6 +236,11 @@ button {
   display: flex;
   justify-content: center;
   margin-top: 150px;
+  .container_title{
+    .title_text_background{
+      margin-left: -50%;
+    }
+  }
   .container_map {
     position: relative;
     margin-top: 50px;
@@ -336,8 +355,11 @@ button {
 }
 .section_banner_services {
   margin-top: 280px;
-  .title_text {
+  .container_title{
     margin-left: 140px;
+    .title_text_background{
+      left: -30%;
+    }
   }
   .prev_text {
     font-size: 38px;
@@ -470,10 +492,16 @@ button {
 .section_shop {
   margin-top: 200px;
   padding: 0px 140px;
+  .container_title{
+    .title_text_background{
+      left: -15%;
+    }
+  }
   .container_shop {
     display: flex;
-    margin-top: 150px;
+    justify-content: space-between;
     align-items: start;
+    margin-top: 150px;
     .upper_text {
       text-align: start;
     }
@@ -503,8 +531,8 @@ button {
     .container_img_goods {
       margin-left: 200px;
       .img_slide {
-        max-width: 800px;
-        max-height: 1000px;
+        max-width: 650px;
+        max-height: 400px;
       }
     }
     .container_nav_goods {
@@ -523,30 +551,20 @@ button {
   }
 }
 .container_footer {
-  position: relative;
   display: flex;
-  align-items: start;
-  margin-top: 500px;
-  margin-bottom: -80px;
+  justify-content: center;
+  margin-top: 250px;
+  margin-bottom: -120px;
   padding: 50px 120px;
   padding-bottom: 0px;
-  .brand_footer {
-    position: absolute;
-    left: 48%;
-    bottom: -50%;
-  }
-  .item_footer {
-    width: 400px;
-    margin-right: 150px;
-    p {
-      font-size: 20px;
-      text-align: left;
-      color: rgba(255, 255, 255, 0.619);
-      a {
-        color: rgba(255, 255, 255, 0.619);
-      }
+  a{
+    text-decoration: none;
+    .brand_footer {
+      letter-spacing: 7px;
+      opacity: 20%;
     }
   }
+ 
 }
 @keyframes move_inside_line {
   0% {

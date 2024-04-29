@@ -14,6 +14,11 @@
       "img": "./img/vosmiklinka13-columbia-chyornaya-1900x1060.png",
       "titleName": "Кепка DENKOR Восьмилинка",
       "price": 2899
+    },
+    {
+      "img": "./img/flamingo.png",
+      "titleName": "Спасательный круг для детей",
+      "price": 4590
     }
   ]
 }
