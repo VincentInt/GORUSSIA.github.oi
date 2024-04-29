@@ -1,7 +1,7 @@
 {
   "banner": [
     {
-      "titleName": "Симферополь Гранд-Отель",
+      "titleName": "Симферопольский Гранд-Отель",
       "img": "./img/fe26dc36611d6e9430de8be44206124b.jpg",
       "serviceArray": [
         {
@@ -24,7 +24,7 @@
       ]
     },
     {
-      "titleName": "Отели Goldan tulip hotel",
+      "titleName": "Краснодарский Отель Goldan tulip hotel",
       "img": "./img/JmauQ7mMRxU.jpg",
       "serviceArray": [
         {
@@ -47,7 +47,7 @@
       ]
     },
     {
-      "titleName": "Отели National",
+      "titleName": "Московский отель National в европеском стиле",
       "img": "./img/scale_2400.jpg",
       "serviceArray": [
         {
@@ -70,7 +70,7 @@
       ]
     },
     {
-      "titleName": "Отели Grand Kazan Hotel",
+      "titleName": "Казанский отель Grand Kazan Hotel",
       "img": "./img/_MG_5390.jpg",
       "serviceArray": [
         {
