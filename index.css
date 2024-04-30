@@ -35,20 +35,38 @@ button {
   background-color: transparent;
 }
 .icon {
-  width: 30px;
+  width: clamp(24px, 6vw, 32px);
   filter: contrast(0%) brightness(500%);
 }
+.btn_arrow_container {
+  display: flex;
+  justify-content: space-between;
+  width: clamp(70px, 15vw, 100px);
+  .btn_arrow {
+    &:last-child {
+      margin-top: -9px;
+      rotate: 180deg;
+    }
+  }
+  .arrow {
+    width: clamp(15px, 5.5vw, 25px);
+    filter: contrast(0%) brightness(500%);
+  }
+}
 .upper_text {
-  font-size: 38px;
+  font-size: clamp(25px, 7vw, 38px);
   text-transform: uppercase;
+}
+/*Временно*/
+.title_text_background {
+  display: none;
 }
 .title_text,
 .title_text_background {
-  font-size: 56px;
+  font-size: clamp(24px, 3vw, 56px);
   font-weight: 700;
   text-align: left;
   text-transform: uppercase;
-
   &::after {
     content: "-";
     color: transparent;
@@ -70,74 +88,70 @@ button {
 .header_container {
   position: relative;
   display: flex;
+  width: 100%;
   height: 100vh;
   background: linear-gradient(rgba(34, 34, 34, 0.43), rgba(15, 15, 15, 1));
   box-shadow: 0px 12px 60px 0px rgba(0, 0, 0, 0.5);
-  margin-bottom: 150px;
+  margin-bottom: clamp(60px, 10vw, 150px);
   .background_container {
     z-index: -1;
     position: absolute;
     overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     .background_img {
       width: 100%;
       height: 100%;
+      object-fit: cover;
     }
   }
   .section_header_nav {
     z-index: 5;
     position: relative;
     overflow: hidden;
-    width: 168px;
+    width: clamp(130px, 15vw, 168px);
     height: 100%;
     border-right: 1px solid rgba(255, 255, 255, 0.106);
     .container_nav {
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
       .logotype_container {
         display: flex;
         justify-content: center;
         .logotype_rotate {
+          font-size: clamp(54px, 3vw, 68px);
           text-wrap: nowrap;
           writing-mode: vertical-rl;
           rotate: -180deg;
         }
         .logotype_span {
-          padding: 25px 100%;
+          padding: clamp(15px, 1.5vw, 25px) 100%;
           background-color: rgb(4, 255, 242);
         }
       }
       .container_bth {
         display: flex;
+        flex-direction: column;
         justify-content: center;
-        flex-wrap: wrap;
-        padding: 0px 40px;
-        margin-top: 35px;
         .btn_nav {
-          margin-top: 15px;
-          .btn_nav_img {
-            width: 32px;
-          }
+          margin-top: clamp(8px, 1.2vw, 15px);
           .btn_text {
-            font-size: 15px;
+            font-size: clamp(10px, 1.4vw, 15px);
           }
         }
       }
       .container_time {
-        margin-top: 35px;
         .big_time_text {
-          font-size: 56px;
+          font-size: clamp(32px, 3.5vw, 56px);
         }
         .container_flex_time {
           display: flex;
           align-items: center;
           justify-content: center;
           .small_time_text {
-            font-size: 24px;
+            font-size: clamp(18px, 2.2vw, 24px);
             font-weight: 500;
             padding: 0px 5px;
             &:first-child {
@@ -150,14 +164,16 @@ button {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 20px;
+        margin-bottom: clamp(15px, 5vw, 20px);
+        margin-top: clamp(10px, 1.2vw, 20px);
         .location_img {
-          width: 28px;
+          width: clamp(14px, 2.5vw, 28px);
         }
         .location_text {
-          font-size: 14px;
+          font-size: clamp(10px, 2.5vw, 14px);
           font-weight: 400;
-          padding-top: 2pxpx;
+          padding-top: 2px;
+
           margin-left: 5px;
         }
       }
@@ -166,36 +182,29 @@ button {
   .section_banner {
     position: relative;
     width: 100%;
-    padding: 50px;
     .btn_arrow_container {
       position: absolute;
-      right: 80px;
+      top: 8%;
+      right: 5%;
       display: flex;
-      .btn_arrow {
-        &:last-child {
-          rotate: 180deg;
-          margin-top: -8px;
-        }
-        padding: 0px 20px;
-      }
     }
     .container_banner_text {
       position: absolute;
-      bottom: 120px;
-      right: 80px;
+      bottom: 18%;
+      right: 5%;
       .container_text {
         padding: 20px 0px;
         .upper_text {
           text-align: end;
         }
         .category_text {
+          font-size: clamp(18px, 5vw, 28px);
+          font-weight: 300;
+          text-align: end;
           &::before {
             content: "-";
             margin-right: 10px;
           }
-          font-size: 28px;
-          font-weight: 300;
-          text-align: end;
         }
       }
     }
@@ -203,10 +212,10 @@ button {
       position: absolute;
       display: flex;
       justify-content: end;
-      right: 80px;
-      bottom: 40px;
+      right: 5%;
+      bottom: 8%;
       .item_slide {
-        width: 250px;
+        width: clamp(200px, 16vw, 250px);
         margin-left: 50px;
         .line {
           height: 4px;
@@ -224,10 +233,10 @@ button {
           align-items: center;
           margin-top: 15px;
           .number_slide_text {
-            font-size: 26px;
+            font-size: clamp(24px, 2vw, 26px);
           }
           .name_slide_text {
-            font-size: 24px;
+            font-size: clamp(20px, 1.5vw, 24px);
             font-weight: 300;
           }
         }
@@ -236,11 +245,23 @@ button {
   }
 }
 .section_map {
-  margin: 0px 140px;
+  margin: 0px clamp(50px, 4vw, 140px);
   margin-bottom: 110px;
   .container_title {
     .title_text_background {
       margin-left: -50%;
+    }
+    .container_locate {
+      display: flex;
+      justify-content: end;
+      margin-top: 50px;
+      .upper_text {
+        font-size: 28px;
+        font-weight: 400;
+        letter-spacing: 5px;
+        text-align: end;
+        opacity: 50%;
+      }
     }
   }
   .main_container_map {
@@ -248,34 +269,39 @@ button {
     justify-content: center;
     .container_map {
       position: relative;
-      margin-top: 50px;
-      width: 1300px;
-
       img {
+        object-fit: cover;
         width: 100%;
       }
       .container_info_point {
         z-index: 2;
         position: absolute;
-        padding: 20px 30px;
+        bottom: 95%;
+        left: 5%;
+        min-width: clamp(100px, 10vw, 190px);
+        padding: clamp(10px, 1.5vw, 20px) clamp(20px, 1.5vw, 30px);
         border-radius: 8px;
         background-color: rgba(0, 0, 0, 0.878);
         .info_text {
+          font-size: clamp(16px, 1.4vw, 22px);
           text-align: start;
         }
         .container_info {
-          width: 190px;
-          margin-top: 15px;
+          margin-top: clamp(8px, 1.2vw, 15px);
           .item_info {
             display: flex;
             justify-content: space-between;
             align-content: center;
             margin-top: 8px;
+            h5 {
+              font-size: clamp(15px, 1.2vw, 22px);
+            }
             .container_point_icon {
               display: flex;
               justify-content: center;
               .point_icon {
-                width: 25px;
+                object-fit: contain;
+                width: clamp(18px, 1.5vw, 25px);
                 filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(180deg);
               }
             }
@@ -283,19 +309,24 @@ button {
         }
       }
     }
-    .container_point {
+    .container_poin_info {
       position: absolute;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 10px;
-      .point_map {
-        margin-right: 8px;
-        width: 20px;
-        height: 20px;
-        border-radius: 56px;
-        box-shadow: 0px 0px 35px 0px rgb(4, 255, 242);
-        background-color: rgb(4, 255, 242);
+      .container_point {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        .point_map {
+          margin-right: 8px;
+          width: clamp(8px, 1.3vw, 20px);
+          height: clamp(8px, 1.3vw, 20px);
+          border-radius: 56px;
+          box-shadow: 0px 0px 35px 0px rgb(4, 255, 242);
+          background-color: rgb(4, 255, 242);
+        }
+        h4 {
+          font-size: clamp(12px, 1.3vw, 16px);
+        }
       }
     }
   }
@@ -406,8 +437,7 @@ button {
     .container_nav_banner {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      height: 250px;
+      height: 100vh;
       margin-top: 80px;
       padding-left: 50px;
       .container_text_slide {
@@ -418,90 +448,81 @@ button {
           line-height: 65px;
         }
       }
-      .container_arrow_btn {
+      .container_slider_btn {
         display: flex;
         justify-content: end;
-        margin-top: 20px;
-        .arrow_btn {
-          display: flex;
-          justify-content: space-between;
-          width: 80px;
 
-          .btn_slide_arrow {
-            filter: brightness(70%);
-            &:nth-child(2) {
-              margin-top: -10px;
-              rotate: 180deg;
-            }
-          }
+        .btn_arrow_container {
+          margin-top: 20px;
         }
-      }
-    }
-  }
-  .container_servise {
-    margin-top: 150px;
-    .container_airplane,
-    .container_sleep {
-      position: relative;
-      display: flex;
-      justify-content: space-between;
-      margin-left: 140px;
-      .contaienr_airplane_text,
-      .contaienr_sleep_text {
-        .upper_text {
-          line-height: 65px;
-          text-align: left;
-        }
-      }
-
-      .img_airplane,
-      .img_sleep {
-        position: absolute;
-        top: -120px;
-        right: 20px;
-      }
-      .img_airplane {
-        width: 900px;
-        rotate: 12deg;
-      }
-      .img_sleep {
-        width: 450px;
-      }
-    }
-  }
-  .container_servise_plane {
-    display: flex;
-    margin-top: 120px;
-    padding: 0px 140px;
-    .item_plane {
-      display: flex;
-      justify-content: left;
-      width: 280px;
-      margin-right: 20px;
-      .container_btn_service {
-        display: flex;
-        justify-content: right;
-        gap: 10px;
-        margin-top: 5px;
-        .icon {
-          width: 20px;
-        }
-      }
-      .upper_text {
-        word-break: break-word;
-        text-align: left;
-      }
-      .prev_text {
-        rotate: 180deg;
-        padding-left: 20px;
-        font-size: 25px;
-        text-align: end;
-        text-wrap: nowrap;
-        writing-mode: vertical-lr;
       }
     }
   }
 }
+.container_servise {
+  margin-top: 150px;
+  .container_airplane,
+  .container_sleep {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 140px;
+    .contaienr_airplane_text,
+    .contaienr_sleep_text {
+      .upper_text {
+        line-height: 65px;
+        text-align: left;
+      }
+    }
+
+    .img_airplane,
+    .img_sleep {
+      position: absolute;
+      top: -120px;
+      right: 20px;
+    }
+    .img_airplane {
+      width: 900px;
+      rotate: 12deg;
+    }
+    .img_sleep {
+      width: 450px;
+    }
+  }
+}
+.container_servise_plane {
+  display: flex;
+  margin-top: 120px;
+  padding: 0px 140px;
+  .item_plane {
+    display: flex;
+    justify-content: left;
+    width: 280px;
+    margin-right: 20px;
+    .container_btn_service {
+      display: flex;
+      justify-content: right;
+      gap: 10px;
+      margin-top: 5px;
+      .icon {
+        width: 20px;
+      }
+    }
+    .upper_text {
+      word-break: break-word;
+      text-align: left;
+    }
+    .prev_text {
+      rotate: 180deg;
+      padding-left: 20px;
+      font-size: 25px;
+      text-align: end;
+      text-wrap: nowrap;
+      writing-mode: vertical-lr;
+    }
+  }
+}
+
 .section_shop {
   padding: 0px 140px;
   .container_title {
@@ -547,18 +568,8 @@ button {
         max-height: 400px;
       }
     }
-    .container_nav_goods {
-      display: flex;
-      justify-content: space-between;
-      width: 80px;
+    .btn_arrow_container {
       margin-top: -80px;
-      .btn_arrow_goods {
-        filter: contrast(40%);
-        &:last-child {
-          margin-top: -10px;
-          rotate: 180deg;
-        }
-      }
     }
   }
 }
@@ -583,5 +594,37 @@ button {
   }
   100% {
     width: 100%;
+  }
+}
+@media (max-width: 960px) {
+  .header_container {
+    .section_header_nav {
+      display: none;
+    }
+    .section_banner {
+      .container_state_slide_banner {
+        display: none;
+      }
+      .container_banner_text {
+        position: absolute;
+        bottom: 5%;
+        right: 5%;
+      }
+    }
+  }
+}
+@media (max-width: 460px) {
+  .section_map {
+    margin: 0px 10px;
+    .container_map {
+      .container_poin_info {
+        margin-left: -10px;
+        margin-top: -10px;
+      }
+    }
+  }
+
+  .point_text {
+    display: none;
   }
 }
