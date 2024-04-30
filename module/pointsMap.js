@@ -1,5 +1,6 @@
-import { searchCityApi } from "./Utils/locationUtils.js";
-import pointBaseArray from "./data/PointMap.json" assert {type: "json"}
+import { searchCityCoordApi, searchCityNameApi } from "./Utils/locationUtils.js";
+import pointBaseArray from "./data/PointMap.json" assert { type: "json" };
+
 export const pointsMapFunc = () => {
   const USER_KEY_WEATHER_API = "aa78c371f61da4559495da8ca2eeca61";
   const INFO_WEATHER_CITY_WEATHER_API =
@@ -7,17 +8,18 @@ export const pointsMapFunc = () => {
   let currentPoint = null;
   const getsWeatherObj = {};
   const mapPointsElem = document.getElementById("map_points");
+  const titleMyLocationElem = document.getElementById("title_location_map")
 
-  async function infoHoverPoint(pointItem) {
-    if ((currentPoint != pointItem) & !document.getElementById("info_point")) {
-      const itemWeather = await getWeatherInfoCity(pointItem);
+  mapPointsElem.onclick=()=>removeInfoPoints()
 
-      mapPointsElem.insertAdjacentHTML(
+
+  async function infoHoverPoint(elem, pointItem) {
+    if ((currentPoint != elem) & !document.getElementById("info_point")) {
+      const itemWeather = await getWeatherInfoCity(elem);
+      pointItem.insertAdjacentHTML(
         "afterbegin",
-        `<div style="top:${pointItem.top - 19}%; left:${
-          pointItem.left
-        }%;" id="info_point" class="container_info_point">
-            <h2 class="info_text">${pointItem.city}</h2>
+        `<div id="info_point" class="container_info_point">
+            <h2 class="info_text">${elem.city}</h2>
             <div class="container_info">
                 <div class="item_info">
                   <div class="container_point_icon">
@@ -40,30 +42,44 @@ export const pointsMapFunc = () => {
             </div>
         </div>`
       );
-      currentPoint = pointItem;
+      currentPoint = elem;
     }
   }
-  function renderPoints() {
+ function renderPoints() {
+    const renderMyLocation = async (coord) => {
+      const coords = coord.coords
+      const cityLocation = await searchCityCoordApi(coords.latitude, coords.longitude)
+      
+      titleMyLocationElem.innerText = `${cityLocation.address.city} | ${cityLocation.address.state}`
+    }
+    navigator.geolocation.getCurrentPosition(renderMyLocation, (err)=>console.error(err))
+    
     pointBaseArray.forEach((elem, index) => {
       mapPointsElem.insertAdjacentHTML(
         "beforeend",
-        `<div id="point_${index}" style="top:${elem.top}%; left:${elem.left}%;" class="container_point">
+        `<div class="container_poin_info" id="point_${index}" style="top:${elem.top}%; left:${elem.left}%;">
+          <div class="container_point">
             <div class="point_map"></div>
-            <h4>${elem.city}</h4>
+            <h4 class="point_text">${elem.city}</h4>
+          </div>
          </div>`
       );
       const pointElem = document.getElementById(`point_${index}`);
-      pointElem.onmouseover = () => infoHoverPoint(elem);
+      pointElem.onclick = () => infoHoverPoint(elem, pointElem);
+      pointElem.onmouseover = () => infoHoverPoint(elem, pointElem);
       pointElem.onmouseout = () => {
-        document.getElementById("info_point")?.remove();
-        currentPoint = null;
+        removeInfoPoints();
       };
     });
+  }
+  function removeInfoPoints() {
+    document.getElementById("info_point")?.remove();
+    currentPoint = null;
   }
   async function getWeatherInfoCity(item) {
     if (getsWeatherObj[item.city]) return getsWeatherObj[item.city];
 
-    const cityItem = await searchCityApi(item.city)
+    const cityItem = await searchCityNameApi(item.city);
     const cityWeatherItem = await fetch(
       `${INFO_WEATHER_CITY_WEATHER_API}?lat=${cityItem.lat}&lon=${cityItem.lon}&appid=${USER_KEY_WEATHER_API}&units=metric`
     )
