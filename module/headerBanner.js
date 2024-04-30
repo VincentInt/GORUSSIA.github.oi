@@ -1,4 +1,5 @@
-import slidesBaseArray from "./data/Header.json" assert {type: "json"}
+import { searchCityCoordApi } from "./Utils/locationUtils.js";
+import slidesBaseArray from "./data/Header.json" assert { type: "json" };
 
 export const bannerMainFunc = () => {
   let indexSlide = 0;
@@ -55,8 +56,9 @@ export const bannerMainFunc = () => {
       <div class="item_slide">
         <div class="line"><div id="line_state_slider_${index}"></div></div>
         <div class="container_text">
-          <h3 class="number_slide_text">${indexSlide < 10 ? `0${indexSlide}` : index
-        }</h3>
+          <h3 class="number_slide_text">${
+            indexSlide < 10 ? `0${indexSlide}` : index
+          }</h3>
           <h4 class="name_slide_text">${elem.terrain}</h4>
         </div>
       </div>`
@@ -73,12 +75,8 @@ export const bannerMainFunc = () => {
     }, 5000);
   }
   async function getCityUsers(lat, long) {
-    const URL_NOMINATIM = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${long}`;
-    const cityLocation = await fetch(URL_NOMINATIM)
-      .then((prev) => prev.json())
-      .then((json) => json.address.city)
-      .catch((err) => console.error(err));
-    locationCityElem.innerText = cityLocation;
+    const cityLocation = await searchCityCoordApi(lat, long);
+    locationCityElem.innerText = cityLocation.address.city;
   }
   function getGeolocation() {
     const showGeolocation = (show) => {
@@ -96,7 +94,7 @@ export const bannerMainFunc = () => {
     let day = dateObj.getDate();
     let month = JSON.stringify(dateObj.getMonth() + 1);
     let years = `${dateObj.getFullYear()}`.slice(2);
-    month.length < 10 ? month = `0${month}` : false
+    month.length < 10 ? (month = `0${month}`) : false;
 
     daysElem.innerText = day;
     monthElem.innerText = month;

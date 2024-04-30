@@ -1,4 +1,4 @@
-export const searchCityApi = async (cityName) => {
+export const searchCityNameApi = async (cityName) => {
   const USER_KEY_WEATHER_API = "aa78c371f61da4559495da8ca2eeca61";
   const SEARCH_CITY_WEATHER_API =
     "http://api.openweathermap.org/geo/1.0/direct";
@@ -10,13 +10,19 @@ export const searchCityApi = async (cityName) => {
     .catch((err) => console.error(err));
   return cityItem;
 };
+export const searchCityCoordApi = async (lat, lon) => {
+  const URL_NOMINATIM = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lon}`;
+  const cityLocation = await fetch(URL_NOMINATIM)
+    .then((prev) => prev.json())
+    .then((json) =>  json)
+    .catch((err) => console.error(err));
+  return cityLocation
+};
 export const calculateDistance = async (renderFunc, bannerObj) => {
   let distance = null;
   const earthRadius = 6371;
-  
-  const whereCity = await searchCityApi(
-    bannerObj.city
-  );
+
+  const whereCity = await searchCityNameApi(bannerObj.city);
 
   navigator.geolocation.getCurrentPosition(longDistance, err);
   function longDistance({ coords }) {
@@ -48,7 +54,7 @@ export const calculateDistance = async (renderFunc, bannerObj) => {
         Math.sqrt(1 - gaversinusesDifference)
       );
     distance = Math.ceil(earthRadius * centralAngle);
-    const serviceArray = bannerObj.serviceArray
+    const serviceArray = bannerObj.serviceArray;
     serviceArray[1].description = distance;
     serviceArray[2].description = getTime(distance);
     serviceArray[3].description = Math.ceil(distance * 50);
