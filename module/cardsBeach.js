@@ -32,6 +32,8 @@ export const cardsBeachFunc = () => {
     ) {
       startTouchStatus = true;
       startMouseDownPositionPx = event.changedTouches[0].clientX;
+
+      document.addEventListener("touchmove", changeMoveTouch);
     }
   }
   function changeMoveTouch(event) {
@@ -45,9 +47,10 @@ export const cardsBeachFunc = () => {
   function changeEndTouch() {
     if (startTouchStatus) {
       removeChangeMousedown();
+      
+      startTouchStatus = false;
 
       document.removeEventListener("touchmove", changeMoveTouch);
-      startTouchStatus = false;
     }
   }
   function transformXMove(px, duration = "") {
@@ -82,7 +85,7 @@ export const cardsBeachFunc = () => {
     } else {
     }
     document.removeEventListener("mousemove", changeMoveBanner);
-    document.addEventListener("touchmove", changeMoveTouch);
+    document.removeEventListener("touchmove", changeMoveTouch);
   }
   function changeMoveBanner({ x }) {
     movePositionPX = positionBannerPx + x - startMouseDownPositionPx;
