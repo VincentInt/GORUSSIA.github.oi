@@ -2,11 +2,102 @@ import beachsBaseArray from "./data/Beach.json" assert { type: "json" };
 
 export const cardsBeachFunc = () => {
   const beachCardsElem = document.getElementById("container_beach_cards");
-  beachsBaseArray.forEach((elem) => {
-    beachCardsElem.insertAdjacentHTML(
-      "afterbegin",
-      `
-    <div class="beach_card">
+  const wrapperBeachSlides = document.getElementById("wrapper_beach_slides");
+  document.addEventListener("touchstart", changeStartTouch);
+  document.addEventListener("touchend", changeEndTouch);
+
+  let positionBannerPx = 0;
+  let movePositionPX = null;
+  let startMouseDownPositionPx = null;
+  let startTouchStatus = false;
+
+  beachCardsElem.onmousedown = (mouse) => {
+    if (window.event.stopPropagation) window.event.stopPropagation();
+    window.event.cancelBubble = true;
+    mouse.cancelBubble = true;
+
+    startMouseDownPositionPx = mouse.clientX;
+
+    document.addEventListener("mousemove", changeMoveBanner);
+  };
+
+  wrapperBeachSlides.onmouseup = () => removeChangeMousedown();
+  wrapperBeachSlides.onmouseleave = () => removeChangeMousedown();
+
+  function changeStartTouch(event) {
+    if (
+      (event.changedTouches[0].pageY >= beachCardsElem.offsetTop) &
+      (event.changedTouches[0].pageY <=
+        beachCardsElem.offsetTop + beachCardsElem.offsetHeight)
+    ) {
+      startTouchStatus = true;
+      startMouseDownPositionPx = event.changedTouches[0].clientX;
+    }
+  }
+  function changeMoveTouch(event) {
+    if (startTouchStatus) {
+      const x = event.changedTouches[0].clientX;
+      movePositionPX = positionBannerPx + x - startMouseDownPositionPx;
+
+      transformXMove(movePositionPX);
+    }
+  }
+  function changeEndTouch() {
+    if (startTouchStatus) {
+      removeChangeMousedown();
+
+      document.removeEventListener("touchmove", changeMoveTouch);
+      startTouchStatus = false;
+    }
+  }
+  function transformXMove(px, duration = "") {
+    beachCardsElem.style = `transform: translateX(${px}px); ${duration}`;
+  }
+
+  function removeChangeMousedown() {
+    const maxPositionBannerPx = -(
+      beachCardsElem.scrollWidth - beachCardsElem.offsetWidth
+    );
+    const minPositionBannerPx = 0;
+    positionBannerPx += movePositionPX - positionBannerPx;
+
+    if (maxPositionBannerPx > positionBannerPx) {
+      positionBannerPx = maxPositionBannerPx;
+      transformXMove(positionBannerPx, "transition-duration: 400ms;");
+
+      setTimeout(
+        () =>
+          (beachCardsElem.style = `transform: translateX(${positionBannerPx}px); transition-duration: 0ms;`),
+        500
+      );
+    } else if (minPositionBannerPx < positionBannerPx) {
+      positionBannerPx = minPositionBannerPx;
+      transformXMove(positionBannerPx, "transition-duration: 400ms;");
+
+      setTimeout(
+        () =>
+          (beachCardsElem.style = `transform: translateX(${positionBannerPx}px); transition-duration: 0ms;`),
+        500
+      );
+    } else {
+    }
+    document.removeEventListener("mousemove", changeMoveBanner);
+    document.addEventListener("touchmove", changeMoveTouch);
+  }
+  function changeMoveBanner({ x }) {
+    movePositionPX = positionBannerPx + x - startMouseDownPositionPx;
+    transformXMove(movePositionPX);
+  }
+  function render() {
+    beachsBaseArray.forEach((elem, index) => {
+      let style = "";
+
+      if (!(index % 2)) style = "margin-top: -40px; margin-bottom: 40px";
+
+      beachCardsElem.insertAdjacentHTML(
+        "afterbegin",
+        `
+    <div style="${style}" class="beach_card">
     <div class="container_img_beach_card">
       <img
         class="img_beach_card"
@@ -23,6 +114,8 @@ export const cardsBeachFunc = () => {
     </div>
   </div>
     `
-    );
-  });
+      );
+    });
+  }
+  render();
 };

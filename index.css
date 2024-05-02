@@ -54,7 +54,7 @@ button {
   }
 }
 .upper_text {
-  font-size: clamp(25px, 7vw, 38px);
+  font-size: clamp(22px, 7vw, 38px);
   text-transform: uppercase;
 }
 /*Временно*/
@@ -63,7 +63,7 @@ button {
 }
 .title_text,
 .title_text_background {
-  font-size: clamp(24px, 3vw, 56px);
+  font-size: clamp(22px, 3vw, 56px);
   font-weight: 700;
   text-align: left;
   text-transform: uppercase;
@@ -256,7 +256,8 @@ button {
       justify-content: end;
       margin-top: 50px;
       .upper_text {
-        font-size: 28px;
+        margin-left: 50px;
+        font-size: clamp(10px, 2.2vw, 28px);
         font-weight: 400;
         letter-spacing: 5px;
         text-align: end;
@@ -334,62 +335,66 @@ button {
 .section_beach_cards {
   display: flex;
   justify-content: center;
-  flex-wrap: nowrap;
+  user-select: none;
   margin-bottom: 280px;
-  .beach_card {
+  /**/
+  .container_beach_cards {
     overflow: hidden;
-    position: relative;
-    width: 400px;
-    height: 900px;
-    margin-left: -40px;
-    &:hover {
-      .container_img_beach_card {
-        .img_beach_card {
-          transition: filter 1s ease;
-          filter: brightness(100%);
-        }
-      }
-    }
-    &:first-child {
-      margin-left: 0px;
-    }
-    &:nth-child(2) {
-      margin-top: -40px;
-    }
-    &:nth-child(4) {
-      margin-top: -40px;
-    }
-    .container_img_beach_card {
-      position: absolute;
+    width: clamp(1000px, 130vw, 1600px);
+    padding-top: 40px;
+    .items_slides {
       display: flex;
-      justify-content: center;
-      width: 420px;
-      height: 900px;
-      .img_beach_card {
-        transition: filter 1s ease;
-        filter: brightness(35%);
-        z-index: -1;
-      }
-    }
-    .container_text_beach_card {
-      margin-top: 72px;
-      margin-left: 40px;
-      .text_beach {
-        width: 200px;
-        text-align: left;
-      }
-      .container_text_location {
-        display: flex;
-        height: 70%;
-        text-wrap: nowrap;
-        writing-mode: vertical-rl;
-        rotate: -180deg;
-        .text_location {
-          padding: 10px 0px;
-          font-size: 18px;
-          letter-spacing: 3px;
-          &:first-child {
-            border-bottom: 1px solid white;
+      padding: 40px 0px;
+      transition-duration: 0ms;
+      /**/
+      .beach_card {
+        overflow: hidden;
+        position: relative;
+        min-width: clamp(300px, 35vw, 400px);
+        height: clamp(600px, 70vw, 900px);
+        &:hover {
+          .container_img_beach_card {
+            .img_beach_card {
+              transition: filter 1s ease;
+              filter: brightness(100%);
+            }
+          }
+        }
+        .container_img_beach_card {
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          width: clamp(320px, 35vw, 420px);
+          height: clamp(620px, 70vw, 920px);
+          .img_beach_card {
+            transition: filter 1s ease;
+            filter: brightness(35%);
+            z-index: -1;
+          }
+        }
+        .container_text_beach_card {
+          margin-top: 72px;
+          margin-left: clamp(10px, 8vw,40px);
+          .text_beach {
+            font-size: clamp(24px, 3vw,38px);
+            width: 250px;
+            text-align: left;
+          }
+          .container_text_location {
+            display: flex;
+            margin-top: 50%;
+            align-items: center;
+            text-wrap: nowrap;
+            writing-mode: vertical-rl;
+            rotate: -180deg;
+            .text_location {
+              padding: 10px 0px;
+              font-size: clamp(10px, 1.5vw, 18px);
+              letter-spacing: 3px;
+              &:first-child {
+                border-bottom: 1px solid white;
+              }
+            }
           }
         }
       }
@@ -623,7 +628,6 @@ button {
       }
     }
   }
-
   .point_text {
     display: none;
   }

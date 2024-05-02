@@ -66,8 +66,8 @@ export const pointsMapFunc = () => {
       );
       const pointElem = document.getElementById(`point_${index}`);
       pointElem.onclick = () => infoHoverPoint(elem, pointElem);
-      pointElem.onmouseover = () => infoHoverPoint(elem, pointElem);
-      pointElem.onmouseout = () => {
+      pointElem.onmouseenter = () => infoHoverPoint(elem, pointElem);
+      pointElem.onmouseleave = () => {
         removeInfoPoints();
       };
     });

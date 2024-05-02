@@ -9,7 +9,7 @@ import { headerBtnNav } from "./module/Utils/HeaderBtn.js";
 bannerMainFunc();
 pointsMapFunc();
 cardsBeachFunc();
-serviceAirplaneBannerFunc();
-serviceSleepBannerFunc();
-shopBannerFunc()
-headerBtnNav()
+// serviceAirplaneBannerFunc();
+// serviceSleepBannerFunc();
+// shopBannerFunc()
+// headerBtnNav()
