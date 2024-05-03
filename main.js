@@ -7,9 +7,9 @@ import { shopBannerFunc } from "./module/shopBanner.js";
 import { headerBtnNav } from "./module/Utils/HeaderBtn.js";
 
 bannerMainFunc();
+headerBtnNav()
 pointsMapFunc();
 cardsBeachFunc();
-// serviceAirplaneBannerFunc();
+serviceAirplaneBannerFunc();
 // serviceSleepBannerFunc();
 // shopBannerFunc()
-// headerBtnNav()

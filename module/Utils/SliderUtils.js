@@ -35,9 +35,7 @@ export class MainSliderUtils {
     this.sectionSlider.style = "transition: opacity 0.5s ease-in; opacity: 0;";
 
     setTimeout(() => {
-      this.containerImg.innerHTML = `<img class="img_slide" src="${
-        this.baseSlides.banner[this.indexSlide].img
-      }" alt="slide_img" />`;
+      this.containerImg.src = this.baseSlides.banner[this.indexSlide].img
       this.slideName.innerText = `${
         this.baseSlides.banner[this.indexSlide].titleName
       }`;

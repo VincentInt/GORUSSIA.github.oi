@@ -1,12 +1,14 @@
 html {
   scroll-behavior: smooth;
 }
+
 body {
   padding: 0;
   margin: 0;
   background-color: rgba(23, 25, 25, 1);
   padding-bottom: 150px;
 }
+
 h1,
 button,
 h2,
@@ -21,52 +23,63 @@ p {
   margin: 0;
   padding: 0;
 }
+
 h1 {
   font-size: 60px;
 }
+
 h5 {
   font-size: 18px;
   font-weight: 400;
 }
+
 button {
   cursor: pointer;
   outline: none;
   border: none;
   background-color: transparent;
 }
+
 .icon {
   width: clamp(24px, 6vw, 32px);
   filter: contrast(0%) brightness(500%);
 }
+
 .btn_arrow_container {
   display: flex;
   justify-content: space-between;
   width: clamp(70px, 15vw, 100px);
+
   .btn_arrow {
     &:last-child {
       margin-top: -9px;
       rotate: 180deg;
     }
   }
+
   .arrow {
     width: clamp(15px, 5.5vw, 25px);
     filter: contrast(0%) brightness(500%);
   }
 }
+
 .upper_text {
   font-size: clamp(22px, 7vw, 38px);
   text-transform: uppercase;
 }
+
 /*Временно*/
 .title_text_background {
   display: none;
 }
+
 .title_text,
 .title_text_background {
   font-size: clamp(22px, 3vw, 56px);
   font-weight: 700;
   text-align: left;
   text-transform: uppercase;
+
   &::after {
     content: "-";
     color: transparent;
@@ -76,8 +89,10 @@ button {
     border-top: 1px solid rgb(4, 255, 242);
   }
 }
+
 .container_title {
   position: relative;
+
   .title_text_background {
     position: absolute;
     top: 80%;
@@ -85,6 +100,7 @@ button {
     opacity: 2.8%;
   }
 }
+
 .header_container {
   position: relative;
   display: flex;
@@ -93,18 +109,21 @@ button {
   background: linear-gradient(rgba(34, 34, 34, 0.43), rgba(15, 15, 15, 1));
   box-shadow: 0px 12px 60px 0px rgba(0, 0, 0, 0.5);
   margin-bottom: clamp(60px, 10vw, 150px);
+
   .background_container {
     z-index: -1;
     position: absolute;
     overflow: hidden;
     width: 100%;
     height: 100%;
+
     .background_img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
   }
+
   .section_header_nav {
     z-index: 5;
     position: relative;
@@ -112,63 +131,77 @@ button {
     width: clamp(130px, 15vw, 168px);
     height: 100%;
     border-right: 1px solid rgba(255, 255, 255, 0.106);
+
     .container_nav {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       height: 100%;
+
       .logotype_container {
         display: flex;
         justify-content: center;
+
         .logotype_rotate {
           font-size: clamp(54px, 3vw, 68px);
           text-wrap: nowrap;
           writing-mode: vertical-rl;
           rotate: -180deg;
         }
+
         .logotype_span {
           padding: clamp(15px, 1.5vw, 25px) 100%;
           background-color: rgb(4, 255, 242);
         }
       }
+
       .container_bth {
         display: flex;
         flex-direction: column;
         justify-content: center;
+
         .btn_nav {
           margin-top: clamp(8px, 1.2vw, 15px);
+
           .btn_text {
             font-size: clamp(10px, 1.4vw, 15px);
           }
         }
       }
+
       .container_time {
         .big_time_text {
           font-size: clamp(32px, 3.5vw, 56px);
         }
+
         .container_flex_time {
           display: flex;
           align-items: center;
           justify-content: center;
+
           .small_time_text {
             font-size: clamp(18px, 2.2vw, 24px);
             font-weight: 500;
             padding: 0px 5px;
+
             &:first-child {
               border-right: 1px solid white;
             }
           }
         }
       }
+
       .container_location {
         display: flex;
         justify-content: center;
         align-items: center;
         margin-bottom: clamp(15px, 5vw, 20px);
         margin-top: clamp(10px, 1.2vw, 20px);
+
         .location_img {
           width: clamp(14px, 2.5vw, 28px);
         }
+
         .location_text {
           font-size: clamp(10px, 2.5vw, 14px);
           font-weight: 400;
@@ -179,28 +212,35 @@ button {
       }
     }
   }
+
   .section_banner {
     position: relative;
     width: 100%;
+
     .btn_arrow_container {
       position: absolute;
       top: 8%;
       right: 5%;
       display: flex;
     }
+
     .container_banner_text {
       position: absolute;
       bottom: 18%;
       right: 5%;
+
       .container_text {
         padding: 20px 0px;
+
         .upper_text {
           text-align: end;
         }
+
         .category_text {
           font-size: clamp(18px, 5vw, 28px);
           font-weight: 300;
           text-align: end;
+
           &::before {
             content: "-";
             margin-right: 10px;
@@ -208,18 +248,22 @@ button {
         }
       }
     }
+
     .container_state_slide_banner {
       position: absolute;
       display: flex;
       justify-content: end;
       right: 5%;
       bottom: 8%;
+
       .item_slide {
         width: clamp(200px, 16vw, 250px);
         margin-left: 50px;
+
         .line {
           height: 4px;
           background-color: white;
+
           .inside_line {
             width: 0%;
             height: 100%;
@@ -227,14 +271,17 @@ button {
             background-color: rgb(4, 255, 242);
           }
         }
+
         .container_text {
           display: flex;
           justify-content: space-between;
           align-items: center;
           margin-top: 15px;
+
           .number_slide_text {
             font-size: clamp(24px, 2vw, 26px);
           }
+
           .name_slide_text {
             font-size: clamp(20px, 1.5vw, 24px);
             font-weight: 300;
@@ -244,17 +291,21 @@ button {
     }
   }
 }
+
 .section_map {
   margin: 0px clamp(50px, 4vw, 140px);
   margin-bottom: 110px;
+
   .container_title {
     .title_text_background {
       margin-left: -50%;
     }
+
     .container_locate {
       display: flex;
       justify-content: end;
       margin-top: 50px;
+
       .upper_text {
         margin-left: 50px;
         font-size: clamp(10px, 2.2vw, 28px);
@@ -265,15 +316,19 @@ button {
       }
     }
   }
+
   .main_container_map {
     display: flex;
     justify-content: center;
+
     .container_map {
       position: relative;
+
       img {
         object-fit: cover;
         width: 100%;
       }
+
       .container_info_point {
         z-index: 2;
         position: absolute;
@@ -283,23 +338,29 @@ button {
         padding: clamp(10px, 1.5vw, 20px) clamp(20px, 1.5vw, 30px);
         border-radius: 8px;
         background-color: rgba(0, 0, 0, 0.878);
+
         .info_text {
           font-size: clamp(16px, 1.4vw, 22px);
           text-align: start;
         }
+
         .container_info {
           margin-top: clamp(8px, 1.2vw, 15px);
+
           .item_info {
             display: flex;
             justify-content: space-between;
             align-content: center;
             margin-top: 8px;
+
             h5 {
               font-size: clamp(15px, 1.2vw, 22px);
             }
+
             .container_point_icon {
               display: flex;
               justify-content: center;
+
               .point_icon {
                 object-fit: contain;
                 width: clamp(18px, 1.5vw, 25px);
@@ -310,13 +371,16 @@ button {
         }
       }
     }
+
     .container_poin_info {
       position: absolute;
+
       .container_point {
         display: flex;
         justify-content: center;
         align-items: center;
         padding: 10px;
+
         .point_map {
           margin-right: 8px;
           width: clamp(8px, 1.3vw, 20px);
@@ -325,6 +389,7 @@ button {
           box-shadow: 0px 0px 35px 0px rgb(4, 255, 242);
           background-color: rgb(4, 255, 242);
         }
+
         h4 {
           font-size: clamp(12px, 1.3vw, 16px);
         }
@@ -332,68 +397,74 @@ button {
     }
   }
 }
+
 .section_beach_cards {
   display: flex;
   justify-content: center;
   user-select: none;
-  margin-bottom: 280px;
-  /**/
+  margin-bottom: clamp(50px, 18vw, 280px);
+
+  .nav_btn {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 30px;
+  }
+
   .container_beach_cards {
     overflow: hidden;
-    width: clamp(1000px, 130vw, 1600px);
-    padding-top: 40px;
+    width: clamp(320px, 94vw, 1650px);
+
     .items_slides {
       display: flex;
-      padding: 40px 0px;
-      transition-duration: 0ms;
-      /**/
+      padding-top: 40px;
+
       .beach_card {
-        overflow: hidden;
         position: relative;
-        min-width: clamp(300px, 35vw, 400px);
-        height: clamp(600px, 70vw, 900px);
+        height: clamp(650px, 90vw, 800px);
+
         &:hover {
-          .container_img_beach_card {
-            .img_beach_card {
-              transition: filter 1s ease;
-              filter: brightness(100%);
-            }
+          .window_img_beach {
+            opacity: 100%;
           }
         }
-        .container_img_beach_card {
+
+        .window_img_beach {
+          z-index: -1;
+          overflow: hidden;
           position: absolute;
           display: flex;
           justify-content: center;
-          width: clamp(320px, 35vw, 420px);
-          height: clamp(620px, 70vw, 920px);
-          .img_beach_card {
-            transition: filter 1s ease;
-            filter: brightness(35%);
-            z-index: -1;
+          width: 100%;
+          height: 100%;
+          opacity: 40%;
+          transition: opacity 0.2s ease-in;
+
+          .img_beach {
+            object-fit: contain;
           }
         }
-        .container_text_beach_card {
-          margin-top: 72px;
-          margin-left: clamp(10px, 8vw,40px);
+
+        .container_text {
+          padding: 60px 40px;
+
           .text_beach {
-            font-size: clamp(24px, 3vw,38px);
-            width: 250px;
+            width: 320px;
             text-align: left;
           }
-          .container_text_location {
+
+          .locate_rotate_text {
+            position: absolute;
+            bottom: 50px;
             display: flex;
-            margin-top: 50%;
-            align-items: center;
-            text-wrap: nowrap;
+            justify-content: left;
             writing-mode: vertical-rl;
+            gap: 10px;
             rotate: -180deg;
-            .text_location {
-              padding: 10px 0px;
-              font-size: clamp(10px, 1.5vw, 18px);
+
+            .text_locate {
+              font-size: clamp(15px, 1.7vw, 18px);
+              font-weight: 500;
               letter-spacing: 3px;
-              &:first-child {
-                border-bottom: 1px solid white;
-              }
             }
           }
         }
@@ -401,58 +472,77 @@ button {
     }
   }
 }
+
 .section_banner_services {
   margin-bottom: 200px;
+  margin: 0px clamp(50px, 4vw, 140px);
+
+  .upper_text {
+    font-size: clamp(20px, 3vw, 38px);
+  }
+
   .container_title {
-    margin-left: 140px;
     .title_text_background {
       left: -30%;
     }
   }
+
   .prev_text {
-    font-size: 38px;
     font-weight: 300;
     color: rgb(255, 255, 255);
   }
+
   .container_slider {
     display: flex;
+    flex-direction: row-reverse;
     justify-content: space-between;
-    padding-right: 84px;
-    margin-top: 100px;
-    margin-left: 140px;
+    margin-top: clamp(10px, 5vw, 50px);
+
     .container_img_slide {
-      overflow: hidden;
       position: relative;
-      display: flex;
-      align-items: center;
-      min-width: 1100px;
-      height: 680px;
+      min-width: clamp(280px, 60vw, 1100px);
+      height: clamp(250px, 39vw, 780px);
       box-shadow: 0px 0px 100px 50px rgba(18, 20, 20, 0.829);
-      .img_slide {
-        width: 110%;
-      }
-      .shadow_img_slide {
-        position: absolute;
-        top: 0px;
+
+      .window_slides {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 100%;
         height: 100%;
-        box-shadow: 0px 0px 99px 110px rgb(17, 18, 18) inset;
+        .img_slide {
+          width: 130%;
+        }
+        .shadow_img_slide {
+          position: absolute;
+          top: 0px;
+          width: 100%;
+          height: 100%;
+          box-shadow: 0px 0px 99px 110px rgb(17, 18, 18) inset;
+        }
       }
     }
+
     .container_nav_banner {
       display: flex;
       flex-direction: column;
-      height: 100vh;
-      margin-top: 80px;
+      justify-content: space-between;
+      max-width: 550px;
+      height: clamp(200px, 26vw, 290px);
+      margin-top: clamp(20px, 3vw, 80px);
       padding-left: 50px;
+
       .container_text_slide {
         .upper_text {
           text-align: end;
         }
+
         .prev_text {
           line-height: 65px;
         }
       }
+
       .container_slider_btn {
         display: flex;
         justify-content: end;
@@ -464,63 +554,79 @@ button {
     }
   }
 }
+
 .container_servise {
-  margin-top: 150px;
+  margin-top: clamp(10px, 5vw, 150px);
+
   .container_airplane,
   .container_sleep {
     position: relative;
     display: flex;
     justify-content: space-between;
-    margin-left: 140px;
+
     .contaienr_airplane_text,
     .contaienr_sleep_text {
+      .container_carrier {
+        display: flex;
+        overflow: hidden;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        .img_carrier {
+          width: clamp(100px, 30vw, 300px);
+        }
+      }
       .upper_text {
-        line-height: 65px;
+        line-height: clamp(20px, 6vw, 65px);
         text-align: left;
       }
     }
-
     .img_airplane,
     .img_sleep {
       position: absolute;
       top: -120px;
       right: 20px;
     }
+
     .img_airplane {
-      width: 900px;
+      width: clamp(450px, 45vw, 900px);
       rotate: 12deg;
     }
+
     .img_sleep {
       width: 450px;
     }
   }
 }
+
 .container_servise_plane {
   display: flex;
-  margin-top: 120px;
-  padding: 0px 140px;
+  flex-wrap: wrap;
+  margin-top: clamp(40px, 8vw, 120px);
+  gap: 15px;
   .item_plane {
     display: flex;
     justify-content: left;
-    width: 280px;
-    margin-right: 20px;
+    width: clamp(140px, 20vw, 250px);
     .container_btn_service {
       display: flex;
       justify-content: right;
-      gap: 10px;
       margin-top: 5px;
       .icon {
         width: 20px;
       }
     }
     .upper_text {
+      font-size: clamp(18px, 3vw, 38px);
+      word-wrap: break-word;
       word-break: break-word;
       text-align: left;
     }
     .prev_text {
       rotate: 180deg;
       padding-left: 20px;
-      font-size: 25px;
+      font-size: clamp(14px, 3vw, 22px);
       text-align: end;
       text-wrap: nowrap;
       writing-mode: vertical-lr;
@@ -530,32 +636,38 @@ button {
 
 .section_shop {
   padding: 0px 140px;
+
   .container_title {
     .title_text_background {
       left: -15%;
     }
   }
+
   .container_shop {
     display: flex;
     justify-content: space-between;
     align-items: start;
     margin-top: 150px;
+
     .upper_text {
       text-align: start;
     }
 
     .container_description_goods {
       width: 530px;
+
       .category_text {
         font-weight: 300;
         line-height: 86px;
       }
+
       .container_price {
         display: flex;
         align-items: center;
         justify-content: space-between;
         width: 420px;
         margin-top: 100px;
+
         .btn_sell {
           padding: 12px 30px;
           font-size: 38px;
@@ -566,18 +678,22 @@ button {
         }
       }
     }
+
     .container_img_goods {
       margin-left: 200px;
+
       .img_slide {
         max-width: 650px;
         max-height: 400px;
       }
     }
+
     .btn_arrow_container {
       margin-top: -80px;
     }
   }
 }
+
 .container_footer {
   display: flex;
   justify-content: center;
@@ -585,31 +701,44 @@ button {
   margin-bottom: -120px;
   padding: 50px 120px;
   padding-bottom: 0px;
+
   a {
     text-decoration: none;
+
     .brand_footer {
       letter-spacing: 7px;
       opacity: 20%;
     }
   }
 }
+
 @keyframes move_inside_line {
   0% {
     width: 0%;
   }
+
   100% {
     width: 100%;
   }
 }
+
+@media (max-width: 1024px) {
+  .img_airplane {
+    display: none;
+  }
+}
+
 @media (max-width: 960px) {
   .header_container {
     .section_header_nav {
       display: none;
     }
+
     .section_banner {
       .container_state_slide_banner {
         display: none;
       }
+
       .container_banner_text {
         position: absolute;
         bottom: 5%;
@@ -618,17 +747,81 @@ button {
     }
   }
 }
-@media (max-width: 460px) {
-  .section_map {
-    margin: 0px 10px;
-    .container_map {
-      .container_poin_info {
-        margin-left: -10px;
-        margin-top: -10px;
+@media (max-width: 1440px) {
+  .container_servise_plane {
+    justify-content: space-between;
+  }
+}
+@media (max-width: 850px) {
+  .beach_card {
+    width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section_banner_services {
+    .container_slider {
+      display: block;
+
+      .container_img_slide {
+        width: 100%;
+
+        .window_slides {
+          .shadow_img_slide {
+            box-shadow: 0px 0px 89px 80px rgb(17, 18, 18) inset;
+          }
+        }
+      }
+
+      .container_nav_banner {
+        padding-left: 0px;
+        margin-bottom: 30px;
+
+        .container_slider_btn {
+          justify-content: left;
+        }
+
+        .container_text_slide {
+          .upper_text {
+            text-align: left;
+          }
+        }
       }
     }
   }
-  .point_text {
-    display: none;
+}
+
+@media (max-width: 460px) {
+  .section_banner_services {
+    margin: 0px 10px;
+  }
+}
+.section_map {
+  margin: 0px 10px;
+
+  .container_map {
+    .container_poin_info {
+      margin-left: -10px;
+      margin-top: -10px;
+    }
+  }
+}
+
+.point_text {
+  display: none;
+}
+.section_banner_services {
+  .container_slider {
+    display: block;
+
+    .container_img_slide {
+      width: 100%;
+
+      .window_slides {
+        .shadow_img_slide {
+          box-shadow: 0px 0px 89px 40px rgb(17, 18, 18) inset;
+        }
+      }
+    }
   }
 }
