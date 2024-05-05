@@ -11,5 +11,5 @@ headerBtnNav()
 pointsMapFunc();
 cardsBeachFunc();
 serviceAirplaneBannerFunc();
-// serviceSleepBannerFunc();
-// shopBannerFunc()
+serviceSleepBannerFunc();
+shopBannerFunc()

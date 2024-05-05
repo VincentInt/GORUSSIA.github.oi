@@ -58,7 +58,7 @@ button {
   }
 
   .arrow {
-    width: clamp(15px, 5.5vw, 25px);
+    width: clamp(10px, 4.5vw, 25px);
     filter: contrast(0%) brightness(500%);
   }
 }
@@ -403,13 +403,12 @@ button {
   justify-content: center;
   user-select: none;
   margin-bottom: clamp(50px, 18vw, 280px);
-
   .nav_btn {
     display: flex;
     justify-content: end;
     margin-bottom: 30px;
+    padding: 0px 10px;
   }
-
   .container_beach_cards {
     overflow: hidden;
     width: clamp(320px, 94vw, 1650px);
@@ -557,24 +556,24 @@ button {
 
 .container_servise {
   margin-top: clamp(10px, 5vw, 150px);
-
   .container_airplane,
   .container_sleep {
     position: relative;
     display: flex;
     justify-content: space-between;
-
     .contaienr_airplane_text,
     .contaienr_sleep_text {
       .container_carrier {
         display: flex;
         overflow: hidden;
-        height: 50px;
+        height: clamp(30px, 5vw, 70px);
         justify-content: center;
         align-items: center;
-        gap: 30px;
-        .img_carrier {
-          width: clamp(100px, 30vw, 300px);
+        gap: 60px;
+        .img_carrier,
+        .img_hotels {
+          object-fit: contain;
+          height: 100%;
         }
       }
       .upper_text {
@@ -595,7 +594,8 @@ button {
     }
 
     .img_sleep {
-      width: 450px;
+      top: -140px;
+      width: clamp(100px, 22vw, 450px);
     }
   }
 }
@@ -612,9 +612,10 @@ button {
     .container_btn_service {
       display: flex;
       justify-content: right;
+      gap: 15px;
       margin-top: 5px;
       .icon {
-        width: 20px;
+        width: clamp(10px, 2.5vw, 20px);
       }
     }
     .upper_text {
@@ -635,7 +636,7 @@ button {
 }
 
 .section_shop {
-  padding: 0px 140px;
+  margin: clamp(100px, 10vw, 150px) clamp(50px, 4vw, 140px);
 
   .container_title {
     .title_text_background {
@@ -645,17 +646,26 @@ button {
 
   .container_shop {
     display: flex;
+    flex-direction: row-reverse;
     justify-content: space-between;
     align-items: start;
-    margin-top: 150px;
-
+    margin-top: clamp(10px, 5vw, 50px);
+    .main_container_banner {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    .container_slider {
+      display: flex;
+      align-items: start;
+      justify-content: end;
+    }
     .upper_text {
+      font-size: clamp(18px, 3vw, 38px);
       text-align: start;
     }
 
     .container_description_goods {
-      width: 530px;
-
       .category_text {
         font-weight: 300;
         line-height: 86px;
@@ -665,12 +675,11 @@ button {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 420px;
-        margin-top: 100px;
+        margin-top: clamp(20px, 7vw, 100px);
 
         .btn_sell {
-          padding: 12px 30px;
-          font-size: 38px;
+          padding: clamp(5px, 2vw, 12px) clamp(15px, 2vw, 30px);
+          font-size: clamp(18px, 3vw, 38px);
           font-weight: 700;
           border-radius: 8px;
           color: white;
@@ -678,18 +687,15 @@ button {
         }
       }
     }
-
-    .container_img_goods {
-      margin-left: 200px;
-
-      .img_slide {
-        max-width: 650px;
-        max-height: 400px;
-      }
+    .container_btn {
+      display: flex;
+      justify-content: right;
     }
-
-    .btn_arrow_container {
-      margin-top: -80px;
+    .container_img_goods {
+      margin-top: 20px;
+      .img_slide {
+        max-width: clamp(290px, 45vw, 650px);
+      }
     }
   }
 }
@@ -697,15 +703,12 @@ button {
 .container_footer {
   display: flex;
   justify-content: center;
-  margin-top: 250px;
-  margin-bottom: -120px;
-  padding: 50px 120px;
-  padding-bottom: 0px;
-
+  margin-top: clamp(50px, 15vw, 250px);
+  margin-bottom: -280px;
   a {
     text-decoration: none;
-
     .brand_footer {
+      font-size: 15px;
       letter-spacing: 7px;
       opacity: 20%;
     }
@@ -721,24 +724,26 @@ button {
     width: 100%;
   }
 }
-
+@media (max-width: 1440px) {
+  .container_servise_plane {
+    justify-content: space-between;
+  }
+}
 @media (max-width: 1024px) {
-  .img_airplane {
+  .img_airplane,
+  .img_sleep {
     display: none;
   }
 }
-
 @media (max-width: 960px) {
   .header_container {
     .section_header_nav {
       display: none;
     }
-
     .section_banner {
       .container_state_slide_banner {
         display: none;
       }
-
       .container_banner_text {
         position: absolute;
         bottom: 5%;
@@ -747,22 +752,34 @@ button {
     }
   }
 }
-@media (max-width: 1440px) {
-  .container_servise_plane {
-    justify-content: space-between;
-  }
-}
 @media (max-width: 850px) {
   .beach_card {
     width: 300px;
   }
 }
-
 @media (max-width: 768px) {
+  .section_shop {
+    .container_shop {
+      flex-direction: column;
+      .container_description_goods {
+        width: 100%;
+      }
+      .container_bth {
+        justify-content: left;
+      }
+      .container_img_goods {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        .img_slide {
+          min-width: clamp(290px, 80vw, 650px);
+        }
+      }
+    }
+  }
   .section_banner_services {
     .container_slider {
       display: block;
-
       .container_img_slide {
         width: 100%;
 
@@ -792,36 +809,37 @@ button {
 }
 
 @media (max-width: 460px) {
+  .section_shop {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
   .section_banner_services {
-    margin: 0px 10px;
+    margin: clamp(100px, 10vw, 150px) 10px;
   }
-}
-.section_map {
-  margin: 0px 10px;
+  .section_map {
+    margin: clamp(100px, 10vw, 150px) 10px;
 
-  .container_map {
-    .container_poin_info {
-      margin-left: -10px;
-      margin-top: -10px;
+    .container_map {
+      .container_poin_info {
+        margin-left: -10px;
+        margin-top: -10px;
+      }
     }
-  }
-}
+    .section_banner_services {
+      .container_slider {
+        .container_img_slide {
+          width: 100%;
 
-.point_text {
-  display: none;
-}
-.section_banner_services {
-  .container_slider {
-    display: block;
-
-    .container_img_slide {
-      width: 100%;
-
-      .window_slides {
-        .shadow_img_slide {
-          box-shadow: 0px 0px 89px 40px rgb(17, 18, 18) inset;
+          .window_slides {
+            .shadow_img_slide {
+              box-shadow: 0px 0px 89px 40px rgb(17, 18, 18) inset;
+            }
+          }
         }
       }
+    }
+    .point_text {
+      display: none;
     }
   }
 }

@@ -5,20 +5,20 @@
       "img": "./img/fe26dc36611d6e9430de8be44206124b.jpg",
       "serviceArray": [
         {
-          "category": "Курорт",
-          "description": "Отели Симферополя"
+          "category": "Место отдыха",
+          "description": "Отель Симферополя"
         },
         {
-          "category": "Ночей",
+          "category": "Число ночей",
           "servicePrice": 2500,
           "description": 1,
           "after": "Ночь"
         },
         {
-          "category": "Гостей",
+          "category": "Число жильцов",
           "servicePrice": 2000,
           "description": 1,
-          "after": "гостей"
+          "after": "Гостей"
         },
         { "category": "Стоимость", "description": 5000, "after": "Руб" }
       ]
@@ -28,20 +28,20 @@
       "img": "./img/JmauQ7mMRxU.jpg",
       "serviceArray": [
         {
-          "category": "Курорт",
-          "description": "Отели Краснодара"
+          "category": "Место отдыха",
+          "description": "Отель Краснодара"
         },
         {
-          "category": "Ночей",
+          "category": "Число ночей",
           "servicePrice": 2500,
           "description": 1,
           "after": "Ночь"
         },
         {
-          "category": "Гостей",
+          "category": "Число жильцов",
           "servicePrice": 2000,
           "description": 1,
-          "after": "гостей"
+          "after": "Гостей"
         },
         { "category": "Стоимость", "description": 4000, "after": "Руб" }
       ]
@@ -51,20 +51,20 @@
       "img": "./img/scale_2400.jpg",
       "serviceArray": [
         {
-          "category": "Курорт",
-          "description": "Отели Москвы"
+          "category": "Место отдыха",
+          "description": "Отель Москвы"
         },
         {
-          "category": "Ночей",
+          "category": "Число ночей",
           "servicePrice": 2500,
           "description": 1,
           "after": "Ночь"
         },
         {
-          "category": "Гостей",
+          "category": "Число жильцов",
           "servicePrice": 2000,
           "description": 1,
-          "after": "гостей"
+          "after": "Гостей"
         },
         { "category": "Стоимость", "description": 8000, "after": "Руб" }
       ]
@@ -74,20 +74,20 @@
       "img": "./img/_MG_5390.jpg",
       "serviceArray": [
         {
-          "category": "Курорт",
-          "description": "Отели Казани"
+          "category": "Место отдыха",
+          "description": "Отель Казани"
         },
         {
-          "category": "Ночей",
+          "category": "Число ночей",
           "servicePrice": 1900,
           "description": 1,
           "after": "Ночь"
         },
         {
-          "category": "Гостей",
+          "category": "Число жильцов",
           "servicePrice": 2000,
           "description": 1,
-          "after": "гостей"
+          "after": "Гостей"
         },
         { "category": "Стоимость", "description": 7000, "after": "Руб" }
       ]
