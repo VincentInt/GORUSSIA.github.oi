@@ -18,11 +18,82 @@
   </head>
 
   <body>
-    <section>
+    <section class="main_container">
       <header class="header_container">
         <div class="background_container">
           <img id="banner_img" class="background_img" src="" alt="banner_img" />
         </div>
+        <section class="section_header_drop_nav">
+          <button class="container_drop_btn" id="btn_drop_menu">
+            <img
+              class="icon"
+              src="./img/icon/menu_2976215.png"
+              alt="menu_icon"
+            />
+          </button>
+          <div id="container_drop_nav" class="container_header_drop_nav">
+            <nav class="container_drop_nav">
+              <div class="container_bth">
+                <button class="btn_nav">
+                  <img
+                    class="icon btn_nav_img"
+                    src="./img/icon/map_5074088.png"
+                    alt="btn_map_icon"
+                  />
+                  <h5 class="btn_text">карта</h5>
+                </button>
+                <button class="btn_nav">
+                  <img
+                    class="icon btn_nav_img"
+                    src="./img/icon/umbrella-beach_9246466.png"
+                    alt="btn_beach_icon"
+                  />
+                  <h5 class="btn_text">Пляжи</h5>
+                </button>
+                <button class="btn_nav">
+                  <img
+                    class="icon btn_nav_img"
+                    src="./img/icon/icons8-car-96.png"
+                    alt="btn_transport_icon"
+                  />
+                  <h5 class="btn_text">транспорт</h5>
+                </button>
+                <button class="btn_nav">
+                  <img
+                    class="icon btn_nav_img"
+                    src="./img/icon/wondicon-ui-free-sleep_111270.png"
+                    alt="btn_hotel_icon"
+                  />
+                  <h5 class="btn_text">отели</h5>
+                </button>
+                <button class="btn_nav">
+                  <img
+                    class="icon btn_nav_img"
+                    src="./img/icon/shopping-cart_3916630.png"
+                    alt="btn_shop_icon"
+                  />
+                  <h5 class="btn_text">магазин</h5>
+                </button>
+              </div>
+              <div class="container_time">
+                <h2 class="big_time_text days">14</h2>
+                <div class="container_flex_time">
+                  <h3 class="small_time_text month">04</h3>
+                  <h3 class="small_time_text years">24</h3>
+                </div>
+
+                <div class="container_location">
+                  <img
+                    class="icon location_img"
+                    src="./img/icon/icons8-location-100.png"
+                    alt="location_icon btn_nav_img"
+                  />
+                  <h3 class="location_text location_city">Москва</h3>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </section>
         <section class="section_header_nav">
           <nav class="container_nav">
             <div class="logotype_container">
@@ -74,19 +145,18 @@
             </div>
             <div>
               <div class="container_time">
-                <h2 id="days" class="big_time_text">14</h2>
+                <h2 class="big_time_text days">14</h2>
                 <div class="container_flex_time">
-                  <h3 id="month" class="small_time_text">04</h3>
-                  <h3 id="years" class="small_time_text">24</h3>
+                  <h3 class="small_time_text month">04</h3>
+                  <h3 class="small_time_text years">24</h3>
                 </div>
-
                 <div class="container_location">
                   <img
                     class="icon location_img"
                     src="./img/icon/icons8-location-100.png"
                     alt="location_icon btn_nav_img"
                   />
-                  <h3 id="location_city" class="location_text">Москва</h3>
+                  <h3 class="location_text location_city">Москва</h3>
                 </div>
               </div>
             </div>
@@ -325,12 +395,15 @@
             </div>
           </div>
         </section>
-        <section class="section_shop section_elem">
+        <section class="section_shop">
           <div class="container_title">
             <h2 class="title_text">Магазин</h2>
             <h2 class="title_text_background">Магазин</h2>
           </div>
-          <div id="main_container_slide_shop" class="container_shop">
+          <div
+            id="main_container_slide_shop"
+            class="container_shop section_elem"
+          >
             <div class="main_container_banner">
               <div class="container_btn">
                 <nav class="btn_arrow_container">

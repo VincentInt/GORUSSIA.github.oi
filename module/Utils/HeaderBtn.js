@@ -1,23 +1,23 @@
-export const headerBtnNav = () => {
-  const locateElemArray = [
-    
-  ] 
-  const headerBtnNavArrayElem =  document.getElementsByClassName("btn_nav")
-  const allSectionArrayElem = document.getElementsByClassName("section_elem")
-
+export const headerBtnNav = (navElem) => {
+  const locateElemArray = [];
+  const containerBthElem = document.getElementsByClassName("container_bth");
+  const allSectionArrayElem = document.getElementsByClassName("section_elem");
+  console.log(containerBthElem);
   function addLocaleElem() {
-    [...allSectionArrayElem].forEach(elem => {
-      locateElemArray.push(elem.offsetTop)
+    [...allSectionArrayElem].forEach((elem) => {
+      locateElemArray.push(elem);
     });
   }
   function addOnclickEventElem() {
-    [...headerBtnNavArrayElem].forEach((elem,index)=>{
-        elem.onclick = () => moveScreen(locateElemArray[index])
-    })
+    [...containerBthElem].forEach((elem) => {
+      [...elem.children].forEach((elem, index) => {
+        elem.onclick = () => moveScreen(locateElemArray[index]);
+      });
+    });
   }
-  function moveScreen(coordY) {
-    window.scrollTo(0, coordY)
+  function moveScreen(elem) {
+    window.scrollTo(0, elem.offsetTop);
   }
-  addLocaleElem()
-  addOnclickEventElem()
+  addLocaleElem();
+  addOnclickEventElem();
 };

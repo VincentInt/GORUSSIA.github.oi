@@ -1,8 +1,10 @@
 html {
   scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 
 body {
+
   padding: 0;
   margin: 0;
   background-color: rgba(23, 25, 25, 1);
@@ -116,7 +118,6 @@ button {
     overflow: hidden;
     width: 100%;
     height: 100%;
-
     .background_img {
       width: 100%;
       height: 100%;
@@ -124,15 +125,19 @@ button {
     }
   }
 
-  .section_header_nav {
+  .section_header_nav,
+  .section_header_drop_nav {
     z-index: 5;
     position: relative;
     overflow: hidden;
     width: clamp(130px, 15vw, 168px);
     height: 100%;
     border-right: 1px solid rgba(255, 255, 255, 0.106);
-
-    .container_nav {
+    .container_drop_nav {
+      display: none;
+    }
+    .container_nav,
+    .container_drop_nav {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -212,7 +217,29 @@ button {
       }
     }
   }
+  .section_header_drop_nav {
+    display: none;
+    min-width: clamp(130px, 15vw, 168px);
+    border: none;
+    .container_drop_btn {
+      z-index: 5;
+      position: absolute;
+      left: 20%;
+      top: 7%;
+    }
+    .container_header_drop_nav {
+      transform: translateX(-100%);
+      transition: transform 1s ease;
+      height: 100%;
+      border-right: 1px solid rgba(255, 255, 255, 0.106);
+      backdrop-filter: blur(5px);
 
+      .container_drop_nav {
+        padding-top: 80px;
+        justify-content: space-evenly;
+      }
+    }
+  }
   .section_banner {
     position: relative;
     width: 100%;
@@ -293,7 +320,7 @@ button {
 }
 
 .section_map {
-  margin: 0px clamp(50px, 4vw, 140px);
+  margin: 0px clamp(50px, 8vw, 140px);
   margin-bottom: 110px;
 
   .container_title {
@@ -473,8 +500,7 @@ button {
 }
 
 .section_banner_services {
-  margin-bottom: 200px;
-  margin: 0px clamp(50px, 4vw, 140px);
+  margin: clamp(100px, 10vw, 200px) clamp(50px, 8vw, 140px);
 
   .upper_text {
     font-size: clamp(20px, 3vw, 38px);
@@ -636,7 +662,7 @@ button {
 }
 
 .section_shop {
-  margin: clamp(100px, 10vw, 150px) clamp(50px, 4vw, 140px);
+  margin: 0px clamp(50px, 8vw, 140px);
 
   .container_title {
     .title_text_background {
@@ -692,9 +718,11 @@ button {
       justify-content: right;
     }
     .container_img_goods {
+      padding: 0px clamp(0px, 8vw, 80px);
       margin-top: 20px;
       .img_slide {
         max-width: clamp(290px, 45vw, 650px);
+        max-height: 350px;
       }
     }
   }
@@ -737,6 +765,9 @@ button {
 }
 @media (max-width: 960px) {
   .header_container {
+    .section_header_drop_nav {
+      display: block;
+    }
     .section_header_nav {
       display: none;
     }

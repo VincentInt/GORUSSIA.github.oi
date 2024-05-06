@@ -12,10 +12,10 @@ export const bannerMainFunc = () => {
   const uniquenessBannerTextElem = document.getElementById(
     "uniqueness_banner_text"
   );
-  const locationCityElem = document.getElementById("location_city");
-  const daysElem = document.getElementById("days");
-  const monthElem = document.getElementById("month");
-  const yearsElem = document.getElementById("years");
+  const locationCityElem = document.getElementsByClassName("location_city");
+  const daysElem = document.getElementsByClassName("days");
+  const monthElem = document.getElementsByClassName("month");
+  const yearsElem = document.getElementsByClassName("years");
   const leftBannerBtnElem = document.getElementById("left_banner_btn");
   const rigthBannerBtnElem = document.getElementById("rigth_banner_btn");
 
@@ -76,7 +76,9 @@ export const bannerMainFunc = () => {
   }
   async function getCityUsers(lat, long) {
     const cityLocation = await searchCityCoordApi(lat, long);
-    locationCityElem.innerText = cityLocation.address.city;
+    [...locationCityElem].forEach(
+      (elem) => (elem.innerText = cityLocation.address.city)
+    );
   }
   function getGeolocation() {
     const showGeolocation = (show) => {
@@ -96,9 +98,9 @@ export const bannerMainFunc = () => {
     let years = `${dateObj.getFullYear()}`.slice(2);
     month.length < 10 ? (month = `0${month}`) : false;
 
-    daysElem.innerText = day;
-    monthElem.innerText = month;
-    yearsElem.innerText = years;
+    [...daysElem].forEach((elem) => (elem.innerText = day));
+    [...monthElem].forEach((elem) => (elem.innerText = month));
+    [...yearsElem].forEach((elem) => (elem.innerText = years));
   }
   renderSlidesStateBanner();
   renderSlideBanner();
