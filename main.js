@@ -5,7 +5,7 @@ import { serviceAirplaneBannerFunc } from "./module/serviceAirplaneBanner.js";
 import { serviceSleepBannerFunc } from "./module/serviceSleepBanner.js";
 import { shopBannerFunc } from "./module/shopBanner.js";
 import { headerBtnNav } from "./module/Utils/HeaderBtn.js";
-import { dropMenuHeaderFunc } from "./module/DropMenuHeader.js";
+import { dropMenuHeaderFunc } from "./module/dropMenuHeader.js";
 
 bannerMainFunc();
 dropMenuHeaderFunc()
