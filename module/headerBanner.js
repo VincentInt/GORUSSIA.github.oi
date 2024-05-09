@@ -35,7 +35,6 @@ export const bannerMainFunc = () => {
     bannerImgElem.style = "transition: opacity 0.4s ease-in; opacity: 0;";
 
     clearTimeout(stateTime);
-
     setTimeout(() => {
       bannerImgElem.src = slideItem.img;
       cityBannerTextElem.innerText = slideItem.city;
@@ -76,8 +75,9 @@ export const bannerMainFunc = () => {
   }
   async function getCityUsers(lat, long) {
     const cityLocation = await searchCityCoordApi(lat, long);
+
     [...locationCityElem].forEach(
-      (elem) => (elem.innerText = cityLocation.address.city)
+      (elem) => (elem.innerText = cityLocation.address.state)
     );
   }
   function getGeolocation() {

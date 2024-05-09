@@ -50,7 +50,7 @@ export const pointsMapFunc = () => {
       const coords = coord.coords
       const cityLocation = await searchCityCoordApi(coords.latitude, coords.longitude)
       
-      titleMyLocationElem.innerText = `${cityLocation.address.city} | ${cityLocation.address.state}`
+      titleMyLocationElem.innerText = `${cityLocation.address.state}`
     }
     navigator.geolocation.getCurrentPosition(renderMyLocation, (err)=>console.error(err))
     
