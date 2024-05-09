@@ -32,13 +32,13 @@
           "description": "Отель Краснодара"
         },
         {
-          "category": "Число ночей",
+          "category": "ночи",
           "servicePrice": 2500,
           "description": 1,
           "after": "Ночь"
         },
         {
-          "category": "Число жильцов",
+          "category": "гости",
           "servicePrice": 2000,
           "description": 1,
           "after": "Гостей"
@@ -55,13 +55,13 @@
           "description": "Отель Москвы"
         },
         {
-          "category": "Число ночей",
+          "category": "ночи",
           "servicePrice": 2500,
           "description": 1,
           "after": "Ночь"
         },
         {
-          "category": "Число жильцов",
+          "category": "гости",
           "servicePrice": 2000,
           "description": 1,
           "after": "Гостей"
@@ -78,13 +78,13 @@
           "description": "Отель Казани"
         },
         {
-          "category": "Число ночей",
+          "category": "ночи",
           "servicePrice": 1900,
           "description": 1,
           "after": "Ночь"
         },
         {
-          "category": "Число жильцов",
+          "category": "гости",
           "servicePrice": 2000,
           "description": 1,
           "after": "Гостей"

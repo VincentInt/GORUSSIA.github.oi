@@ -4,6 +4,7 @@ html {
 }
 
 body {
+  overflow: hidden;
   padding: 0;
   margin: 0;
   background-color: rgba(23, 25, 25, 1);
@@ -90,7 +91,60 @@ button {
     border-top: 1px solid rgb(4, 255, 242);
   }
 }
-
+.section_load {
+  z-index: 8;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  transition: opacity 1s ease-in-out;
+  .container_load {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    border-radius: 86px;
+    background-color: rgb(255, 255, 255);
+    .load_center {
+      position: absolute;
+      width: 72px;
+      height: 72px;
+      border-radius: 86px;
+      background-color: black;
+    }
+    .load_line {
+      min-width: 110%;
+      height: 50px;
+      background-color: rgb(0, 0, 0);
+      animation: loading 2s ease infinite;
+    }
+  }
+  .upper_text {
+    margin-right: -15px;
+    clip-path: inset(0 1.2ch 0 0);
+    animation: loading_text 1s steps(4) infinite;
+  }
+}
+@keyframes loading_text {
+  to {
+    clip-path: inset(0 -0.2ch 0 0);
+  }
+}
+@keyframes loading {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
 .container_title {
   position: relative;
   .title_text_background {
@@ -209,8 +263,7 @@ button {
           font-size: clamp(10px, 2.5vw, 14px);
           font-weight: 400;
           padding-top: 2px;
-
-          margin-left: 5px;
+          margin-left: 2px;
         }
       }
     }
@@ -586,7 +639,7 @@ button {
       .container_carrier {
         display: flex;
         overflow: hidden;
-        height: clamp(40px, 7vw, 120px);
+        height: clamp(30px, 7vw, 90px);
         justify-content: center;
         align-items: center;
         gap: 60px;
@@ -605,7 +658,7 @@ button {
     .img_sleep {
       position: absolute;
       top: -120px;
-      right: 20px;
+      right: -120px;
     }
 
     .img_airplane {

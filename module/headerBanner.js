@@ -93,9 +93,10 @@ export const bannerMainFunc = () => {
   function getTimeZone() {
     const dateObj = new Date();
 
-    let day = dateObj.getDate();
+    let day = JSON.stringify(dateObj.getDate());
     let month = JSON.stringify(dateObj.getMonth() + 1);
-    let years = `${dateObj.getFullYear()}`.slice(2);
+    let years = JSON.stringify(dateObj.getFullYear()).slice(2);
+    day.length < 10 ? (day = `0${day}`) : false;
     month.length < 10 ? (month = `0${month}`) : false;
 
     [...daysElem].forEach((elem) => (elem.innerText = day));

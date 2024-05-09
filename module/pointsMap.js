@@ -1,4 +1,7 @@
-import { searchCityCoordApi, searchCityNameApi } from "./Utils/locationUtils.js";
+import {
+  searchCityCoordApi,
+  searchCityNameApi,
+} from "./Utils/locationUtils.js";
 import pointBaseArray from "./data/PointMap.json" assert { type: "json" };
 
 export const pointsMapFunc = () => {
@@ -8,10 +11,9 @@ export const pointsMapFunc = () => {
   let currentPoint = null;
   const getsWeatherObj = {};
   const mapPointsElem = document.getElementById("map_points");
-  const titleMyLocationElem = document.getElementById("title_location_map")
+  const titleMyLocationElem = document.getElementById("title_location_map");
 
-  mapPointsElem.onclick=()=>removeInfoPoints()
-
+  mapPointsElem.onclick = () => removeInfoPoints();
 
   async function infoHoverPoint(elem, pointItem) {
     if ((currentPoint != elem) & !document.getElementById("info_point")) {
@@ -45,15 +47,21 @@ export const pointsMapFunc = () => {
       currentPoint = elem;
     }
   }
- function renderPoints() {
+  function renderPoints() {
     const renderMyLocation = async (coord) => {
-      const coords = coord.coords
-      const cityLocation = await searchCityCoordApi(coords.latitude, coords.longitude)
-      
-      titleMyLocationElem.innerText = `${cityLocation.address.state}`
-    }
-    navigator.geolocation.getCurrentPosition(renderMyLocation, (err)=>console.error(err))
-    
+      const coords = coord.coords;
+
+      const cityLocation = await searchCityCoordApi(
+        coords.latitude,
+        coords.longitude
+      );
+
+      titleMyLocationElem.innerText = `- ${cityLocation.address.state}`;
+    };
+    navigator.geolocation.getCurrentPosition(renderMyLocation, (err) =>
+      console.error(err)
+    );
+
     pointBaseArray.forEach((elem, index) => {
       mapPointsElem.insertAdjacentHTML(
         "beforeend",
@@ -65,11 +73,11 @@ export const pointsMapFunc = () => {
          </div>`
       );
       const pointElem = document.getElementById(`point_${index}`);
-      pointElem.onclick = () => infoHoverPoint(elem, pointElem);
+
+      pointElem.onfocus = () => infoHoverPoint(elem, pointElem);
+      pointElem.onblur = () => removeInfoPoints();
       pointElem.onmouseenter = () => infoHoverPoint(elem, pointElem);
-      pointElem.onmouseleave = () => {
-        removeInfoPoints();
-      };
+      pointElem.onmouseleave = () => removeInfoPoints();
     });
   }
   function removeInfoPoints() {
