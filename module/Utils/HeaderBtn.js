@@ -2,7 +2,7 @@ export const headerBtnNav = (navElem) => {
   const locateElemArray = [];
   const containerBthElem = document.getElementsByClassName("container_bth");
   const allSectionArrayElem = document.getElementsByClassName("section_elem");
-  console.log(containerBthElem);
+
   function addLocaleElem() {
     [...allSectionArrayElem].forEach((elem) => {
       locateElemArray.push(elem);

@@ -16,6 +16,7 @@ export const searchCityCoordApi = async (lat, lon) => {
     .then((prev) => prev.json())
     .then((json) =>  json)
     .catch((err) => console.error(err));
+    console.log(cityLocation);
   return cityLocation
 };
 export const calculateDistance = async (renderFunc, bannerObj) => {

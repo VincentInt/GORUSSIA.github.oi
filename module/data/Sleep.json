@@ -9,13 +9,13 @@
           "description": "Отель Симферополя"
         },
         {
-          "category": "Число ночей",
+          "category": "Ночи",
           "servicePrice": 2500,
           "description": 1,
           "after": "Ночь"
         },
         {
-          "category": "Число жильцов",
+          "category": "Гости",
           "servicePrice": 2000,
           "description": 1,
           "after": "Гостей"
