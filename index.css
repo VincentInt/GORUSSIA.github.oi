@@ -10,7 +10,7 @@ body {
   background-color: rgba(23, 25, 25, 1);
   padding-bottom: 150px;
 }
-
+input,
 h1,
 button,
 h2,
@@ -46,27 +46,23 @@ button {
   width: clamp(24px, 6vw, 32px);
   filter: contrast(0%) brightness(500%);
 }
-
 .btn_arrow_container {
   display: flex;
   justify-content: space-between;
   width: clamp(70px, 15vw, 100px);
-
   .btn_arrow {
     &:last-child {
       margin-top: -9px;
       rotate: 180deg;
     }
   }
-
   .arrow {
     width: clamp(10px, 4.5vw, 25px);
     filter: contrast(0%) brightness(500%);
   }
 }
-
 .upper_text {
-  font-size: clamp(22px, 7vw, 38px);
+  font-size: clamp(20px, 7vw, 38px);
   text-transform: uppercase;
 }
 
@@ -77,18 +73,112 @@ button {
 
 .title_text,
 .title_text_background {
+  position: relative;
   font-size: clamp(22px, 3vw, 56px);
   font-weight: 700;
   text-align: left;
   text-transform: uppercase;
 
   &::after {
-    content: "-";
-    color: transparent;
-    padding-top: 5px;
-    padding-right: 100px;
-    margin-left: -120px;
-    border-top: 1px solid rgb(4, 255, 242);
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 40%;
+    height: 2px;
+    top: -5px;
+    background-color: aqua;
+  }
+}
+.container_order_services {
+  z-index: 8;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.btn_order_services {
+  padding: clamp(5px, 2vw, 12px) clamp(15px, 2vw, 30px);
+  font-size: clamp(16px, 3vw, 32px);
+  font-weight: 600;
+  color: white;
+  .span_btn_order {
+    position: relative;
+    margin-left: 15px;
+    padding: clamp(5px, 2vw, 12px) clamp(15px, 2vw, 30px);
+    background-color: aqua;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 18px;
+      height: 2px;
+      top: 45%;
+      left: -10%;
+      background-color: white;
+    }
+  }
+}
+.section_window_order_service {
+  z-index: 8;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.786);
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  .window_order_service {
+    max-width: 500px;
+    padding: 50px 40px;
+    border-radius: 8px;
+    background-color: rgba(23, 25, 25, 1);
+    transition: opacity 0.5s ease-in-out;
+    .container_cheack_mark {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+      .icon_cheack_mark {
+        width: clamp(40px, 6vw, 80px);
+      }
+    }
+    .text_error_tel {
+      font-weight: 300;
+      font-size: 15px;
+      text-align: left;
+      color: red;
+    }
+    .text_consent {
+      margin-top: 20px;
+      font-size: 11px;
+      font-weight: 300;
+      text-align: left;
+      color: rgba(255, 255, 255, 0.355);
+    }
+    .form_order_service {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+
+      .inpt_text_order {
+        padding: 8px 15px;
+        font-size: clamp(16px, 3vw, 24px);
+        color: white;
+        outline: none;
+        border: 1px solid white;
+        border-radius: 8px;
+        background-color: transparent;
+      }
+      .inpt_btn_order {
+        margin-top: 20px;
+        padding: clamp(6px, 2vw, 10px) clamp(15px, 2vw, 25px);
+        font-size: clamp(16px, 3vw, 25px);
+        font-weight: 700;
+        border: none;
+        border-radius: 8px;
+        color: white;
+        background-color: aqua;
+      }
+    }
   }
 }
 .section_load {
@@ -100,7 +190,8 @@ button {
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: black;
+  background-color: rgba(23, 25, 25, 1);
+  opacity: 1;
   transition: opacity 1s ease-in-out;
   .container_load {
     position: relative;
@@ -117,12 +208,12 @@ button {
       width: 72px;
       height: 72px;
       border-radius: 86px;
-      background-color: black;
+      background-color: rgba(23, 25, 25, 1);
     }
     .load_line {
       min-width: 110%;
       height: 50px;
-      background-color: rgb(0, 0, 0);
+      background-color: rgba(23, 25, 25, 1);
       animation: loading 2s ease infinite;
     }
   }
@@ -252,6 +343,7 @@ button {
         display: flex;
         justify-content: center;
         align-items: center;
+
         margin-bottom: clamp(15px, 5vw, 20px);
         margin-top: clamp(10px, 1.2vw, 20px);
 
@@ -260,8 +352,11 @@ button {
         }
 
         .location_text {
-          font-size: clamp(10px, 2.5vw, 14px);
-          font-weight: 400;
+          max-width: 80px;
+          text-align: left;
+          font-size: clamp(12px, 2.2vw, 16px);
+          font-weight: 300;
+          word-break: break-all;
           padding-top: 2px;
           margin-left: 2px;
         }
@@ -315,7 +410,7 @@ button {
         }
 
         .category_text {
-          font-size: clamp(18px, 5vw, 28px);
+          font-size: clamp(18px, 2.2vw, 28px);
           font-weight: 300;
           text-align: end;
 
@@ -481,6 +576,13 @@ button {
   justify-content: center;
   user-select: none;
   margin-bottom: clamp(50px, 18vw, 280px);
+  .btn_order_services {
+    .span_btn_order {
+      &::before {
+        display: none;
+      }
+    }
+  }
   .nav_btn {
     display: flex;
     justify-content: end;
@@ -497,9 +599,18 @@ button {
 
       .beach_card {
         position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         height: clamp(650px, 90vw, 800px);
-
+        .container_order_services {
+          display: none;
+          margin-bottom: 10px;
+        }
         &:hover {
+          .container_order_services {
+            display: flex;
+          }
           .window_img_beach {
             opacity: 100%;
           }
@@ -565,6 +676,7 @@ button {
   }
   .prev_text {
     font-weight: 300;
+    font-size: clamp(14px, 2.2vw, 28px);
     color: rgb(255, 255, 255);
   }
   .container_slider {
@@ -608,6 +720,7 @@ button {
           text-align: end;
         }
         .prev_text {
+          font-size: clamp(18px, 2.2vw, 28px);
           margin-top: clamp(20px, 3vw, 80px);
         }
       }
@@ -740,7 +853,7 @@ button {
     }
 
     .container_description_goods {
-      width: clamp(300px, 80vw, 800px);
+      width: clamp(300px, 80vw, 900px);
       .category_text {
         font-weight: 300;
         line-height: 86px;
@@ -753,14 +866,12 @@ button {
         align-items: center;
         justify-content: space-between;
         margin-top: clamp(20px, 7vw, 100px);
-
-        .btn_sell {
-          padding: clamp(5px, 2vw, 12px) clamp(15px, 2vw, 30px);
-          font-size: clamp(18px, 3vw, 38px);
-          font-weight: 700;
-          border-radius: 8px;
-          color: white;
-          background-color: aqua;
+        .btn_order_services {
+          .span_btn_order {
+            &::before {
+              display: none;
+            }
+          }
         }
       }
     }
@@ -890,11 +1001,11 @@ button {
 
 @media (max-width: 460px) {
   .section_shop {
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
   .section_banner_services {
-    margin: clamp(100px, 10vw, 150px) 40px;
+    margin: clamp(100px, 10vw, 150px) 20px;
   }
   .section_banner_services {
     .container_slider {
@@ -909,7 +1020,7 @@ button {
     }
   }
   .section_map {
-    margin: clamp(100px, 10vw, 150px) 40px;
+    margin: clamp(100px, 10vw, 150px) 20px;
 
     .container_map {
       .container_poin_info {

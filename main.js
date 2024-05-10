@@ -4,21 +4,23 @@ import { pointsMapFunc } from "./module/pointsMap.js";
 import { serviceAirplaneBannerFunc } from "./module/serviceAirplaneBanner.js";
 import { serviceSleepBannerFunc } from "./module/serviceSleepBanner.js";
 import { shopBannerFunc } from "./module/shopBanner.js";
-import { headerBtnNav } from "./module/Utils/HeaderBtn.js";
+import { headerBtnNavFunc } from "./module/Utils/HeaderBtn.js";
 import { dropMenuHeaderFunc } from "./module/dropMenuHeader.js";
+import { orderServiceWindowFunc } from "./module/orderServiceWindow.js";
 
 window.onload = () => {
-  const loadingElem = document.getElementById("section_load");
+  const loadingElem = document.getElementsByClassName("section_load")[0];
   loadingElem.style = `opacity: 0;`;
 
   bannerMainFunc();
   dropMenuHeaderFunc();
-  headerBtnNav();
+  headerBtnNavFunc();
   pointsMapFunc();
   cardsBeachFunc();
   serviceAirplaneBannerFunc();
   serviceSleepBannerFunc();
   shopBannerFunc();
+  orderServiceWindowFunc()
   
   setTimeout(() => {
     loadingElem.remove();

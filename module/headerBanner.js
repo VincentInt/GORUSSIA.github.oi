@@ -96,8 +96,9 @@ export const bannerMainFunc = () => {
     let day = JSON.stringify(dateObj.getDate());
     let month = JSON.stringify(dateObj.getMonth() + 1);
     let years = JSON.stringify(dateObj.getFullYear()).slice(2);
-    day.length < 10 ? (day = `0${day}`) : false;
-    month.length < 10 ? (month = `0${month}`) : false;
+    
+    day < 10 ? (day = `0${day}`) : false;
+    month < 10 ? (month = `0${month}`) : false;
 
     [...daysElem].forEach((elem) => (elem.innerText = day));
     [...monthElem].forEach((elem) => (elem.innerText = month));

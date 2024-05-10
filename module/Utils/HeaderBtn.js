@@ -1,4 +1,4 @@
-export const headerBtnNav = (navElem) => {
+export const headerBtnNavFunc = (navElem) => {
   const locateElemArray = [];
   const containerBthElem = document.getElementsByClassName("container_bth");
   const allSectionArrayElem = document.getElementsByClassName("section_elem");

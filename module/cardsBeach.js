@@ -130,7 +130,13 @@ export const cardsBeachFunc = () => {
             <h4 class="text_locate">${elem.locate.region}</h4>
             <h4 class="text_locate">${elem.locate.beachLocate}</h4>
           </div>
+          
         </div>
+        <div class="container_order_services">
+          <button class="btn_order_services upper_text">
+            <span class="span_btn_order">Посмотреть</span>
+          </button>
+      </div>
       </div>
     `
       );
