@@ -10,6 +10,7 @@ body {
   background-color: rgba(23, 25, 25, 1);
   padding-bottom: 150px;
 }
+a,
 input,
 h1,
 button,
@@ -883,8 +884,9 @@ button {
       padding: 0px clamp(0px, 8vw, 80px);
       margin-top: 20px;
       .img_slide {
+        object-fit: contain;
         max-width: clamp(290px, 45vw, 650px);
-        max-height: 350px;
+        max-height: clamp(150px, 45vw, 350px);
       }
     }
   }
@@ -892,15 +894,31 @@ button {
 
 .container_footer {
   display: flex;
-  justify-content: center;
+  justify-content: left;
+  padding: 0px clamp(50px, 8vw, 140px);
+  padding-top: 20px;
   margin-top: clamp(50px, 15vw, 250px);
-  margin-bottom: -280px;
-  a {
-    text-decoration: none;
+  margin-bottom: -120px;
+  gap: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.172);
+  .container_collum_footer {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+    .p_description {
+      max-width: clamp(180px, 38vw, 340px);
+      font-size: clamp(8px, 2vw, 16px);
+      word-break: break-all;
+      text-align: left;
+    }
     .brand_footer {
-      font-size: 15px;
-      letter-spacing: 7px;
-      opacity: 20%;
+      font-size: clamp(8px, 2vw, 16px);
+      word-break: break-all;
+      color: white;
+      text-align: left;
+      border-bottom: 1px solid white;
+      text-decoration: none;
     }
   }
 }
@@ -1000,9 +1018,13 @@ button {
 }
 
 @media (max-width: 460px) {
+  .container_footer {
+    padding: 0px 20px;
+    padding-top: 15px;
+    gap: 15px;
+  }
   .section_shop {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin: 0px 20px;
   }
   .section_banner_services {
     margin: clamp(100px, 10vw, 150px) 20px;
