@@ -36,21 +36,40 @@ export const serviceAirplaneBannerFunc = () => {
     AirplaneSlider.cotnainerSlider.innerHTML = "";
 
     if (AirplaneSlider.itemSlide.render) {
-      AirplaneSlider.itemSlide.serviceArray.forEach((elem) => {
-        let description = elem.description;
-        if (typeof elem.description === "number")
-          description = intlObj.NumberFormat("en-EN").format(elem.description);
-        if (elem.after !== undefined) description += " " + elem.after;
+      for (
+        let index = 0;
+        index < AirplaneSlider.itemSlide.serviceArray.length;
+        index += 2
+      ) {
+        let elem = [
+          AirplaneSlider.itemSlide.serviceArray[index],
+          AirplaneSlider.itemSlide.serviceArray[index + 1],
+        ];
+        let description = [elem[0].description, elem[1].description];
+        description = description.map((item, index) => {
+          let formater;
+          if (typeof item === "number")
+            formater = intlObj.NumberFormat("en-EN").format(item);
+          if (elem[index].after !== undefined)
+            return (formater += " " + elem[index].after);
+          else return item;
+        });
         AirplaneSlider.cotnainerSlider.insertAdjacentHTML(
           "beforeend",
           `
+          <div class="container_item_plane">
             <div class="item_plane">
-                <h4 class="upper_text prev_text">${elem.category}</h4>
-                <h2 class="upper_text">${description}</h2>
+                <h4 class="upper_text prev_text">${elem[0].category}</h4>
+                <h2 class="upper_text">${description[0]}</h2>
             </div>
+            <div class="item_plane">
+              <h4 class="upper_text prev_text">${elem[1].category}</h4>
+              <h2 class="upper_text">${description[1]}</h2>
+            </div>
+          </div>
           `
         );
-      });
+      }
     } else {
       await calculateDistance(renderService, AirplaneSlider.itemSlide);
     }

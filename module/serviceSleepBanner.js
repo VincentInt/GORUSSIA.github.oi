@@ -30,59 +30,91 @@ export const serviceSleepBannerFunc = () => {
   );
   function renderService() {
     let price = 0;
-    
     SleepSlider.cotnainerSlider.innerHTML = "";
-    SleepSlider.itemSlide.serviceArray.forEach((elem, index) => {
-      let description = elem.description;
-      let navService = "";
 
-      if (typeof elem.description === "number") {
-        if (SleepSlider.itemSlide.serviceArray.length - 1 === index) {
-          price += elem.description;
-          description = intlObj.NumberFormat("en-EN").format(price);
-        } else
-          description = intlObj.NumberFormat("en-EN").format(elem.description);
-      }
-      if (elem.after !== undefined) description += " " + elem.after;
-      if (elem.servicePrice !== undefined) {
-        price += elem.servicePrice * elem.description;
-        navService = `
+    for (
+      let index = 0;
+      index < SleepSlider.itemSlide.serviceArray.length;
+      index += 2
+    ) {
+      let elem = [
+        SleepSlider.itemSlide.serviceArray[index],
+        SleepSlider.itemSlide.serviceArray[index + 1],
+      ];
+      let description = [elem[0].description, elem[1].description];
+
+      description = description.map((item, i) => {
+        let format = item;
+        if (typeof item === "number") {
+          if (SleepSlider.itemSlide.serviceArray.length - 1 === index + i) {
+            price += item;
+            format = intlObj.NumberFormat("en-EN").format(price);
+          } else
+            format = intlObj.NumberFormat("en-EN").format(elem[i].description);
+        }
+        if (elem[i]?.after) format += " " + elem[i].after;
+        if (elem[i]?.servicePrice) {
+          price += elem[i].servicePrice * item;
+          elem[i].navArrow = `
         <div class="container_btn_service">
             <button id="btn_minus_service_${index}" class="btn_plane_service">
                 <img class="icon" src="./img/icon/minus-button_7263344.png" />
             </button>
-            <button id="btn_plus_service_${index}" class="btn_plane_service">
+            <button id="btn_plus_service_${
+              index + 1
+            }" class="btn_plane_service">
                 <img class="icon" src="./img/icon/plus_1828925.png" />
             </button>
         </div>`;
-      }
+        }
+        return format;
+      });
       containerServiceElem.insertAdjacentHTML(
         "beforeend",
         `
-            <div class="item_plane">
-                <h4 class="upper_text prev_text">${elem.category}</h4>
-                <div>
-                    <h2 class="upper_text">${description}</h2>
-                    ${navService} 
-                </div>
-            </div>
-            `
+        <div class="container_item_plane">
+          <div class="item_plane">
+              <h4 class="upper_text prev_text">${elem[0].category}</h4>
+              <div>
+                  <h2 class="upper_text">${description[0]}</h2>
+                  ${elem[0]?.navArrow ? elem[0]?.navArrow : ""} 
+              </div>
+          </div>
+          <div class="item_plane">
+          <h4 class="upper_text prev_text">${elem[1].category}</h4>
+          <div>
+              <h2 class="upper_text">${description[1]}</h2>
+              ${elem[1]?.navArrow ? elem[1]?.navArrow : ""} 
+          </div>
+      </div>
+        </div>
+        `
       );
-      if (navService) {
-        const btnMinus = document.getElementById(`btn_minus_service_${index}`);
-        btnMinus.onclick = () => {
-          const elem = SleepSlider.itemSlide.serviceArray[index].description;
-          if (elem - 1 > 0)
-            SleepSlider.itemSlide.serviceArray[index].description = elem - 1;
-          SleepSlider.render();
-        };
-        const btnPlus = document.getElementById(`btn_plus_service_${index}`);
-        btnPlus.onclick = () => {
-          SleepSlider.itemSlide.serviceArray[index].description += 1;
-          SleepSlider.render();
-        };
-      }
-    });
+      elem.forEach((elem, i) => {
+        if (elem?.navArrow) {
+          const btnMinus = document.getElementById(
+            `btn_minus_service_${index}`
+          );
+          btnMinus.onclick = () => {
+            const elem =
+              SleepSlider.itemSlide.serviceArray[index + i].description;
+            if (elem - 1 > 0)
+              SleepSlider.itemSlide.serviceArray[index + i].description -= 1;
+            SleepSlider.render();
+          };
+          const btnPlus = document.getElementById(
+            `btn_plus_service_${index + 1}`
+          );
+          btnPlus.onclick = () => {
+            const elem =
+              SleepSlider.itemSlide.serviceArray[index + i].description;
+            if (elem - 1 < 15)
+              SleepSlider.itemSlide.serviceArray[index + i].description += 1;
+            SleepSlider.render();
+          };
+        }
+      });
+    }
   }
 
   SleepSlider.attenuationSlide();
