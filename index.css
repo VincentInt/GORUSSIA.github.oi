@@ -657,8 +657,8 @@ button {
     justify-content: space-between;
     .container_img_slide {
       position: relative;
-      min-width: clamp(280px, 60vw, 1100px);
-      height: clamp(250px, 39vw, 780px);
+      min-width: clamp(280px, 60vw, 500px);
+      height: clamp(250px, 39vw, 480px);
       box-shadow: 0px 0px 100px 50px rgba(18, 20, 20, 0.829);
       .window_slides {
         overflow: hidden;
@@ -683,7 +683,6 @@ button {
     .container_nav_banner {
       display: flex;
       flex-direction: column;
-
       margin-top: clamp(20px, 3vw, 80px);
       padding-left: 50px;
       .container_text_slide {
