@@ -1,5 +1,5 @@
 import { searchCityCoordApi } from "./Utils/locationUtils.js";
-import slidesBaseArray from "./data/Header.json" assert { type: "json" };
+import slidesBaseArray from "./data/Header.json" with { type: 'json' };;
 
 export const bannerMainFunc = () => {
   let indexSlide = 0;

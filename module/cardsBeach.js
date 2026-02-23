@@ -1,4 +1,4 @@
-import beachsBaseArray from "./data/Beach.json" assert { type: "json" };
+import beachsBaseArray from "./data/Beach.json" with { type: 'json' };
 
 export const cardsBeachFunc = () => {
   const beachCardsElem = document.getElementById("container_beach_cards");

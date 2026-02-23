@@ -1,4 +1,4 @@
-import sleepServiceBase from "./data/Sleep.json" assert { type: "json" };
+import sleepServiceBase from "./data/Sleep.json"  with { type: 'json' };
 import { MainSliderUtils } from "./Utils/SliderUtils.js";
 
 export const serviceSleepBannerFunc = () => {

@@ -1,4 +1,4 @@
-import airplaneServiceBase from "./data/Airplane.json" assert { type: "json" };
+import airplaneServiceBase from "./data/Airplane.json"  with { type: 'json' };
 import { calculateDistance } from "./Utils/locationUtils.js";
 import { MainSliderUtils } from "./Utils/SliderUtils.js";
 

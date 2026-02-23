@@ -2,7 +2,7 @@ import {
   searchCityCoordApi,
   searchCityNameApi,
 } from "./Utils/locationUtils.js";
-import pointBaseArray from "./data/PointMap.json" assert { type: "json" };
+import pointBaseArray from "./data/PointMap.json"  with { type: 'json' };
 
 export const pointsMapFunc = () => {
   const USER_KEY_WEATHER_API = "aa78c371f61da4559495da8ca2eeca61";

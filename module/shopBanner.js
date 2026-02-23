@@ -1,5 +1,5 @@
 import { MainSliderUtils } from "./Utils/SliderUtils.js";
-import goodsShopBase from "./data/Shop.json" assert { type: "json" };
+import goodsShopBase from "./data/Shop.json"  with { type: 'json' };
 
 export const shopBannerFunc = () => {
   const intlObj = Intl;
